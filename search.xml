@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>moodle平台安装及环境配置</title>
+    <url>/2019/04/13/moodle/</url>
+    <content><![CDATA[<p>Moodle是一个开源课程管理系统（CMS），也被称为学习管理系统（LMS）或虚拟学习环境（VLE），它通常用来播放符合SCORM标准的课件，但功能远不止课程管理，作业模块等功能。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed6c9dbe9d88c57e75cc.jpg ></p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>moodle安装的基本需求：硬件， 一般的内存和硬盘都够，主要是软件方面：</p>
+<ol>
+<li><p>Windows 或者Linux操作系统</p>
+</li>
+<li><p>web 服务器：可以是IIS，但最推荐的是Apache（详细安装教程见<a href="https://db.smuiot.cn/2019/04/13/apache/" target="_blank" rel="noopener">https://db.smuiot.cn/2019/04/13/apache/</a> ）</p>
+</li>
+<li><p>PHP：当前最低也是 5.3，基本上都是5.5或以上（将php-5.3.1-Win32-VC9-x86.zip解压到一个目录即可）</p>
+</li>
+<li><p>数据库：主要是MYSQL 和Oracle 。这里也是推荐MySQL（详细安装教程见<a href="https://db.smuiot.cn/2019/04/13/mysql/" target="_blank" rel="noopener">https://db.smuiot.cn/2019/04/13/mysql/</a> ）</p>
+</li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>可以通过单个软件的安装，但这里推荐的是集成的开发包安装，主要是XAMPP。他是Apache + MySQL +PHP的集成的开发包<br>XAMPP（Apache+MySQL+PHP+PERL）是一个功能强大的建站集成软件包。当然你也可以使用easy PHP或者wamp或帝国软件，这些都是集成包。你要是不想使用的话可以自己单独安装后自己配置。这里我使用xampp 7.2.10<br>XAMPP下载地址：<a href="https://www.apachefriends.org/index.html" target="_blank" rel="noopener">https://www.apachefriends.org/index.html</a><br>下载后直接默认安装即可</p>
+<p><img src=https://pic.downk.cc/item/5e78ed789dbe9d88c57e7db2.png></p>
+运行XAMPP会自动启动Apache和MySql
+以上是开发包安装和运行的界面。web服务器开启可以http://localhost 进行验证
+
+<h2 id="moodle-下载和安装"><a href="#moodle-下载和安装" class="headerlink" title="moodle 下载和安装"></a>moodle 下载和安装</h2><p>在moodle.org 里DOWNLOADS模块下载moodle最新版。将moodle解压拷贝到web服务器根目录下，XAMPP放C:\xampp\htdocs 下. 接下来安装moodle .</p>
+<p>Tip:如果不喜欢英文的安装界面，在<a href="https://download.moodle.org/download.php/langpack/3.1/zh_cn.zip" target="_blank" rel="noopener">https://download.moodle.org/download.php/langpack/3.1/zh_cn.zip</a> 下载moodle中文语言包，安装时候选择中文如果不能自动下载，需要手动此链接进行下载，将语言包解压zh_cn在C:/ProgramFiles/EasyPHP5.3.0/www/moodle/lang </p>
+<p>语言包有的不兼容，所以替换中文包可能出现问题，建议直接英文安装，最后成功后再moodle里，配置里找到语言在重新下载中文语言包，比较稳妥！</p>
+<p>补充一下：在.config文件里，就url改为<a href="http://localhost/moodle" target="_blank" rel="noopener">http://localhost/moodle</a> ，因为装完XAMPP后，自动将localhost  改为XAMPP的官网，所以需要改为moodle。</p>
+<p>XAMPP：<a href="http://localhost/moodle" target="_blank" rel="noopener">http://localhost/moodle</a> 进入安装界面</p>
+<p><img src=https://pic.downk.cc/item/5e78ed789dbe9d88c57e7db8.jpg ></p>
+<p><img src=https://pic.downk.cc/item/5e78ed789dbe9d88c57e7dbe.jpg ></p>
+<p><img src=https://pic.downk.cc/item/5e78ed789dbe9d88c57e7dc3.jpg ></p>
+<p><img src=https://pic.downk.cc/item/5e78ed789dbe9d88c57e7daf.jpg ></p>
+<p><img src=https://pic.downk.cc/item/5e78ed829dbe9d88c57e84c2.jpg></p>
+<p><img src=https://pic.downk.cc/item/5e78ed829dbe9d88c57e84c7.jpg ></p>
+这儿，PHP需要扩展库，http://jingyan.baidu.com/article/e4d08ffdb467060fd2f60da0.html  ，这里是PHP扩展库的方法，有的是已经有了dll文件，在php.ini 文件里面，查找extension，例如" ;extension = php_cur.dll" ，将前面的；去掉，就可以扩展这个库了，在php下ext文件夹里没有的dll文件，需要去PECL下载扩展库
+<p><img src=https://pic.downk.cc/item/5e78ed829dbe9d88c57e84b1.jpg ></p>
+<p><img src=https://pic.downk.cc/item/5e78ed829dbe9d88c57e84b5.jpg ></p>
+<p><img src=https://pic.downk.cc/item/5e78ed829dbe9d88c57e84bb.jpg ></p>
+最后设置账号密码，就安装成功了！
+
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 8.0.15安装(windows 64位)</title>
+    <url>/2019/04/13/mysql/</url>
+    <content><![CDATA[<p>MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件</p>
+<p><img src=https://pic.downk.cc/item/5e78ed899dbe9d88c57e890d.jpg ></p>
+<a id="more"></a>
+
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>官网地址：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a><br>在官网找到对应的文件并下载<br>下载完成后解压：</p>
+<p><img src=https://pic.downk.cc/item/5e78ed899dbe9d88c57e8913.png ></p>
+
+<h2 id="配置系统环境变量"><a href="#配置系统环境变量" class="headerlink" title="配置系统环境变量"></a>配置系统环境变量</h2><p>复制解压后的mysql到C盘或者其他磁盘下<br>我们去系统的环境变量的path里添加一个mysql的配置  指向mysql的bin目录</p>
+<p><img src=https://pic.downk.cc/item/5e78ed899dbe9d88c57e88f2.png></p>
+
+<h2 id="配置初始化的my-ini文件的文件"><a href="#配置初始化的my-ini文件的文件" class="headerlink" title="配置初始化的my.ini文件的文件"></a>配置初始化的my.ini文件的文件</h2><p>解压后的目录并没有的my.ini文件，没关系可以自行创建在安装根目录下添加的my.ini（新建文本文件，将文件类型改为的.ini），写入基本配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"># 设置3306端口</span><br><span class="line">port&#x3D;3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir&#x3D;C:\Program Files\MySQL</span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir&#x3D;C:\Program Files\MySQL\Data</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections&#x3D;200</span><br><span class="line"># 允许连接失败的次数。</span><br><span class="line">max_connect_errors&#x3D;10</span><br><span class="line"># 服务端使用的字符集默认为UTF8</span><br><span class="line">character-set-server&#x3D;utf8</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine&#x3D;INNODB</span><br><span class="line"># 默认使用“mysql_native_password”插件认证</span><br><span class="line">#mysql_native_password</span><br><span class="line">default_authentication_plugin&#x3D;mysql_native_password</span><br><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line">[client]</span><br><span class="line"># 设置mysql客户端连接服务端时默认使用的端口</span><br><span class="line">port&#x3D;3306</span><br><span class="line">default-character-set&#x3D;utf8</span><br></pre></td></tr></table></figure>
+<p><img src=https://pic.downk.cc/item/5e78ed899dbe9d88c57e88fb.png ></p>
+
+<h2 id="安装MYSQL"><a href="#安装MYSQL" class="headerlink" title="安装MYSQL"></a>安装MYSQL</h2><p>我们在这里使用CMD命令行进行安装，一定要用管理员身份，否则在安装时会报错，导致安装失败<br>可以在桌面新建一个TXT文本，在文本中输入CMD，保存关闭并重命名为”cmd.bat”，然后右键以管理员身份运行即可<br>运行出现黑框后进入mysql安装目录<br>在MySQL的安装目录的仓目录下执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure>
+<p><img src=https://pic.downk.cc/item/5e78ed899dbe9d88c57e8904.png ></p>
+
+<pre><code>注意！[注意] [MY-010454] [服务器]为root @ localhost生成临时密码：9P0gYk-？0，kT其中root @ localhost：后面的9P0gYk-？0，kT就是初始密码（不含首位空格）。在没有更改密码前，需要记住这个密码，后续登录需要用到。复制密码先保存起来!!!</code></pre><h2 id="安装服务"><a href="#安装服务" class="headerlink" title="安装服务"></a>安装服务</h2><p>继续在黑框内输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysqld --install [服务名]（服务名可以不加默认为mysql）</span><br></pre></td></tr></table></figure>
+<p><img src=https://pic.downk.cc/item/5e78ed909dbe9d88c57e8dc1.png ></p>
+服务安装成功之后通过命令net start mysql启动MySQL的服务
+<p><img src=https://pic.downk.cc/item/5e78ed909dbe9d88c57e8dc7.png ></p>
+好了可以把CMD窗口关了！用不到它了
+接下来需要用到Navicat Premium 12数据库图形化工具
+
+<pre><code>链接：https://pan.baidu.com/s/1c3D1mmAGY9nxBm-lp6tWdw 
+提取码：rw75 
+这个图形化工具直接下载解压，点击navicat.exe即可使用    </code></pre><p><img src=/https://pic.downk.cc/item/5e78ed909dbe9d88c57e8dcd.png></p>
+点击 文件-新建链接-mysql
+<p><img src=https://pic.downk.cc/item/5e78ed909dbe9d88c57e8daa.png ></p>
+还记得刚刚让你复制的root @ localhost：后面的初始密码了吗？现在要用到它了复制粘贴上去！
+
+<p>测试一下！<br>显示连接成功<br>MySQL的是成功安装了也可以登录  </p>
+<p>现在就是改密码的时候了</p>
+<p>写SQL改密码吗？</p>
+<p>太麻烦了太低</p>
+<p>来我有个简单的方法</p>
+<p>用Navicat的点击刚刚的连接  </p>
+<p>就会提示我们输入新密码</p>
+<p><img src=https://pic.downk.cc/item/5e78ed909dbe9d88c57e8db5.png ></p>
+mysql数据库安装完成。
+
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows下安装Apache</title>
+    <url>/2019/04/13/apache/</url>
+    <content><![CDATA[<p>Apache是经典的Web服务器之一  </p>
+<p><img src=https://pic.downk.cc/item/5e78ecca9dbe9d88c57e0e79.jpg ></p>
+<a id="more"></a>
+
+<h2 id="Apache官网下载Apache-HTTP-Server服务器"><a href="#Apache官网下载Apache-HTTP-Server服务器" class="headerlink" title="Apache官网下载Apache HTTP Server服务器"></a>Apache官网下载Apache HTTP Server服务器</h2><p>我相信有些朋友刚用apache服务器时，都希望从官网上下载，而面对着官网上众多的项目和镜像以及目录，也许有点茫然。下面是具体步骤：<br>打开apache官网<a href="http://httpd.apache.org/" target="_blank" rel="noopener">http://httpd.apache.org/</a>  （或百度”download apache”）</p>
+<p><img src=https://pic.downk.cc/item/5e78ecca9dbe9d88c57e0e59.png></p>
+点击Download，出现以下界面
+<p><img src=https://pic.downk.cc/item/5e78ecca9dbe9d88c57e0e61.png ></p>
+选择Windows版下载，点击链接
+<p><img src=https://pic.downk.cc/item/5e78ecca9dbe9d88c57e0e68.png></p>
+在新的界面中，会发现VC9和VC11字样，通过阅读相关内容得知，VC9是指用VS2008编译的代码，而VC11是用VS2012编译的，而用VS2012编译的无法在Windows XP和Server 2003中使用。算是为了兼容性好点吧，本人选的用VC9编译Apache，选择下载至此，出现下图，选择适合自己电脑的X86或者X64位，点击框中的三色条纹旗，下载过程完成
+<p><img src=https://pic.downk.cc/item/5e78ecca9dbe9d88c57e0e70.png ></p>
+<p><img src=https://pic.downk.cc/item/5e78ecf79dbe9d88c57e2a9a.png ></p>
+
+
+<h2 id="Apache服务器的安装"><a href="#Apache服务器的安装" class="headerlink" title="Apache服务器的安装"></a>Apache服务器的安装</h2><p>Apache服务器下载完成后，进行解压缩</p>
+<p><img src=https://pic.downk.cc/item/5e78ecd69dbe9d88c57e1590.png></p>
+解压缩文件到你想放置的目录下，这里我本人选择放在D:\Apache-2.4.20目录下
+<p><img src=https://pic.downk.cc/item/5e78ecd69dbe9d88c57e1594.png ></p>
+注意：Apache24名称可以根据自己情况改，本人改成“Apache”
+<p><img src=https://pic.downk.cc/item/5e78ecd79dbe9d88c57e159c.png ></p>
+
+<h2 id="Apache服务器的配置"><a href="#Apache服务器的配置" class="headerlink" title="Apache服务器的配置"></a>Apache服务器的配置</h2><p>打开httpd.conf文件（比如在D:\Apache-2.4.20\Apache\conf下）</p>
+<p>   ①、修改Apache安装目录，最后结尾处不能带“/”或“\”，如下图所示（其中“${SRVROOT}”指定义的SRVROOT路径变量）：<br>   <p><img src=https://pic.downk.cc/item/5e78ecd69dbe9d88c57e1583.png></p><br>   若你的80端口被占用（可在cmd下用命令netstat -an -o | findstr 80），则将80端口改为别的保存<br>   <p><img src=https://pic.downk.cc/item/5e78ecd69dbe9d88c57e1588.png></p><br>   检查配置文件是否合法：httpd -t</p>
+<p>   ②、安装Apache的主服务，有了它，Apache才可启动。可以添加httpd.exe环境变量，然后打开cmd窗口，输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">　　httpd -k install -n apache</span><br></pre></td></tr></table></figure>
+<p>   　该命令的意思是，安装Windows可托管的apache服务，其中”-n”后面参数是自定义Windows服务名称，之后可使用Windows管理服务的命令来管理apache服务，如”net start/stop apache”（启动/停止服务）。</p>
+<p>   　服务安装完毕，完毕后，会自动测试，若有问题，窗口会提示错误，此时请根据错误自行排查。</p>
+<p>   　正常安装完毕如下图所示：</p>
+   <p><img src=https://pic.downk.cc/item/5e78ece29dbe9d88c57e1c4e.png ></p>
+   其中，Errors reported here must be corrected before the service can be started.意思是“此处报告的错误必须在服务开始前进行纠正。”
+
+<h2 id="Apache服务器的启动"><a href="#Apache服务器的启动" class="headerlink" title="Apache服务器的启动"></a>Apache服务器的启动</h2><p>配置好Apache服务器之后，我们便能启动服务器，Windows下Apache服务器的启动方式有三种。</p>
+<p>   1.利用Windows启动</p>
+<p>   打开计算机管理，找到apache服务项，选择后，右键单击，便可选择相应操作（启动、停止、重新启动）<br>   <p><img src=https://pic.downk.cc/item/5e78ece29dbe9d88c57e1c54.jpg ></p><br>   2.利用命令行启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">httpd -k start：不会提示详细的错误信息。</span><br><span class="line"></span><br><span class="line">httpd -n apache -k start：会提示详细的错误信息，其中的&quot;apache&quot;修改为你的Apache服务名,可以到计算机服务里找。 </span><br><span class="line"></span><br><span class="line">httpd -n apache -k restart：重启。</span><br></pre></td></tr></table></figure>
+<p>   net start apache：利用Windows托管服务命令。 </p>
+<p>   3.利用Apache服务器自身的视窗打开</p>
+<p>   找到bin目录下的ApacheMonitor.exe，打开<br>   <p><img src=https://pic.downk.cc/item/5e78ece29dbe9d88c57e1c5a.png ></p><br>   双击运行，桌面右下角会出现图标，双击打开窗口界面<br>   <p><img src=https://pic.downk.cc/item/5e78ece29dbe9d88c57e1c62.png ></p><br>   点击左侧start，启动apache服务。</p>
+<p>   补充句，从该界面可看出，其可以手动控制服务的开启与关闭，为了节省资源，关闭Apache服务器的时候，请先点击“Stop”关闭apache服务。当然，该服务也可以windows系统服务中关闭（建议设置成手动）。</p>
+<p>   下图显示的是该服务成功显示的状态：<br>   <p><img src=https://pic.downk.cc/item/5e78ece29dbe9d88c57e1c4a.png ></p><br>    打开浏览器，输入访问<a href="http://localhost，若出现如下图所示界面，则Apache服务器的基本配置完毕，此时apache服务器已经可以运行" target="_blank" rel="noopener">http://localhost，若出现如下图所示界面，则Apache服务器的基本配置完毕，此时apache服务器已经可以运行</a><br>    <p><img src=https://pic.downk.cc/item/5e78ecf79dbe9d88c57e2a87.jpg ></p></p>
+<h2 id="Apache服务的卸载"><a href="#Apache服务的卸载" class="headerlink" title="Apache服务的卸载"></a>Apache服务的卸载</h2><p>若Apache服务器软件不想用了，想要卸载，一定要先卸载apache服务，然后删除安装文件（切记，若直接删除安装路径的文件夹，会有残余文件在电脑，可能会造成不必要的麻烦），在cmd命令窗口，输入如下（建议先停止服务再删除）：</p>
+<p>httpd -k uninstall 或 sc delete apache (apache是Apache服务器的服务名)</p>
+<p><img src=https://pic.downk.cc/item/5e78ecf79dbe9d88c57e2a8e.png ></p>
+到此为止，Apache服务器的下载、安装、启动和卸载全部结束。
+
+<p>   注：关于Apache服务器下的各个文件的用途<br>   <p><img src=https://pic.downk.cc/item/5e78ecf79dbe9d88c57e2a94.png ></p></p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云</title>
+    <url>/2018/10/17/world/</url>
+    <content><![CDATA[<p>域名不够用？不存在</p>
+<a id="more"></a>
+
+<h2 id="解析设置"><a href="#解析设置" class="headerlink" title="解析设置"></a>解析设置</h2><p>登陆阿里云，打开控制台，左边菜单栏“产品与服务”中找到“域名”，可以看到自己购买的域名，点击解析</p>
+<p><img src=https://pic.downk.cc/item/5e78deba9dbe9d88c5750249.png ></p>
+
+<h2 id="添加记录"><a href="#添加记录" class="headerlink" title="添加记录"></a>添加记录</h2><p>点击左上红色的添加解析比如这里的顶级域名是<code>baidu.com</code>，你想设置的二级域名字段是look，那么你的二级域名就是<code>look.baidu,com</code>,配置如下：<br>记录类型：A记录；<br>主机记录：look ；<br>解析线路：默认；<br>记录值：填你的顶级域名所在的ip(公网)然后保存即可。</p>
+<p><img src= https://pic.downk.cc/item/5e78deba9dbe9d88c5750232.png ></p>
+
+<h2 id="浏览器访问"><a href="#浏览器访问" class="headerlink" title="浏览器访问"></a>浏览器访问</h2><p>浏览器访问刚解析出来的二级域名，如果显示以下界面，即为访问成功。</p>
+<p><img src= https://pic.downk.cc/item/5e78deba9dbe9d88c5750234.png ></p>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果需要将二级域名指向另外一个域名时，将记录类型改为CNAME,记录值填需要指向的域名即可。</p>
+<h2 id="hexo博客绑定域名"><a href="#hexo博客绑定域名" class="headerlink" title="hexo博客绑定域名"></a>hexo博客绑定域名</h2><p>需要配置Github Pages，在远程仓库的根目录下添加一个CNAME文件，文件内容直接写分出来的二级域名即可</p>
+<p><img src= https://pic.downk.cc/item/5e78dff99dbe9d88c575d4a3.png></p>
+
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo网站访问量统计</title>
+    <url>/2018/10/04/visitor/</url>
+    <content><![CDATA[<p>这里使用的是不蒜子提供的阅读统计功能，使用的hexo主题是yilia</p>
+<p><img src=https://pic.downk.cc/item/5e78edb09dbe9d88c57ea0d6.jpg></p>
+<a id="more"></a>
+
+<h2 id="添加是否开启统计功能的配置"><a href="#添加是否开启统计功能的配置" class="headerlink" title="添加是否开启统计功能的配置"></a>添加是否开启统计功能的配置</h2><p>找到yilia主题的配置文件themes/yilia/_config.yml,添加footer字段，加入一个配置，这里叫它counter，即：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">footer:</span><br><span class="line"> # ------------------------------------------</span><br><span class="line"> # visitors count</span><br><span class="line"> counter: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改next主题的模板文件"><a href="#修改next主题的模板文件" class="headerlink" title="修改next主题的模板文件"></a>修改next主题的模板文件</h2><p>由于是把访问量统计放在网页的footer，所以我们需要修改的模板文件是theme/yilia/layout/_partials/footer.ejs,我们在合适的位置(第二行即可)加入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script async src&#x3D;&quot;&#x2F;&#x2F;busuanzi.ibruce.info&#x2F;busuanzi&#x2F;2.3&#x2F;busuanzi.pure.mini.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">          &lt;span id&#x3D;&quot;busuanzi_container_site_pv&quot;&gt;总访问量&lt;span id&#x3D;&quot;busuanzi_value_site_pv&quot;&gt;&lt;&#x2F;span&gt;次&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="访问量统计的效果"><a href="#访问量统计的效果" class="headerlink" title="访问量统计的效果"></a>访问量统计的效果</h2><p><img src=https://pic.downk.cc/item/5e78edb79dbe9d88c57ea54e.png></p>
+
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>海报设计总览</title>
+    <url>/2018/10/04/design/</url>
+    <content><![CDATA[<p>整理一部分做过的海报</p>
+<p><img src=https://pic.downk.cc/item/5e78ed0f9dbe9d88c57e38b1.jpg ></p>
+<a id="more"></a>
+
+<h2 id="狼人杀比赛"><a href="#狼人杀比赛" class="headerlink" title="狼人杀比赛"></a>狼人杀比赛</h2><p><img src=https://pic.downk.cc/item/5e78ed0f9dbe9d88c57e38b6.png></p>
+<p><img src=https://pic.downk.cc/item/5e78ed0f9dbe9d88c57e38bb.jpg ></p>
+
+<h2 id="民族风晚会门票"><a href="#民族风晚会门票" class="headerlink" title="民族风晚会门票"></a>民族风晚会门票</h2><p><img src=https://pic.downk.cc/item/5e78ed0f9dbe9d88c57e38c5.png ></p>
+
+<h2 id="水果捞广告"><a href="#水果捞广告" class="headerlink" title="水果捞广告"></a>水果捞广告</h2><p><img src=https://pic.downk.cc/item/5e78ed0f9dbe9d88c57e38cc.png ></p>
+
+<h2 id="物联网创新应用大赛"><a href="#物联网创新应用大赛" class="headerlink" title="物联网创新应用大赛"></a>物联网创新应用大赛</h2><p><img src=https://pic.downk.cc/item/5e78ed169dbe9d88c57e3d3c.png ></p>
+
+<h2 id="物联网科协招新"><a href="#物联网科协招新" class="headerlink" title="物联网科协招新"></a>物联网科协招新</h2><p><img src=https://pic.downk.cc/item/5e78ed169dbe9d88c57e3d42.png ></p>
+
+<h2 id="技术型讲座"><a href="#技术型讲座" class="headerlink" title="技术型讲座"></a>技术型讲座</h2><p><img src=https://pic.downk.cc/item/5e78ed169dbe9d88c57e3d47.png ></p>
+
+
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Serv-U架设FTP服务器精简教程</title>
+    <url>/2018/09/16/ftp/</url>
+    <content><![CDATA[<p><img src=https://pic.downk.cc/item/5e78ed2b9dbe9d88c57e4a10.jpg ></p>
+<a id="more"></a>
+
+<h2 id="Serv-U安装"><a href="#Serv-U安装" class="headerlink" title="Serv-U安装"></a>Serv-U安装</h2><p>点击<a href="https://pan.baidu.com/s/16DslZ_DpTkCG3BDTeM9q0g/" target="_blank" rel="noopener">此处</a>下载Serv-U<br>密码：edpi<br>双击SU-FTP-Server-Windows-v15.0.1.exe，默认安装</p>
+<h2 id="Serv-U破解"><a href="#Serv-U破解" class="headerlink" title="Serv-U破解"></a>Serv-U破解</h2><p>软件安装好后，首先退出电脑右下角的软件图标，点击退出托盘</p>
+<p><img src=https://pic.downk.cc/item/5e78ed2b9dbe9d88c57e4a16.png ></p>
+退出右下角软件图标后，还需要进行软件服务的停用，打开控制面板－－管理工具－服务－－找到Serv-U File Server服务
+<p><img src=https://pic.downk.cc/item/5e78ed2b9dbe9d88c57e4a1d.png></p>
+双击，打开服务属性，点击停用，然后点确定
+<p><img src=https://pic.downk.cc/item/5e78ed2b9dbe9d88c57e4a23.png ></p>
+停用服务后，打开注册机（Patcher.exe）进行注册，左下角两个空分别输入你的名字和公司名字，勾选EY和Backup两个选项，点击Patch
+<p><img src=https://pic.downk.cc/item/5e78ed2b9dbe9d88c57e4a0c.png ></p>
+注册完成后，打开控制面板－－管理工具－服务－－找到Serv-U File Server服务，打开Serv-U服务属性，点启动，然后点确定即可
+<p><img src=https://pic.downk.cc/item/5e78ed399dbe9d88c57e54ee.png ></p>
+此时打开软件，点击查看您许可证的相关信息并进行配置，即可查看软件是否已经完成注册
+<p><img src=https://pic.downk.cc/item/5e78ed399dbe9d88c57e54f2.png ></p>
+
+<h2 id="Serv—U服务配置"><a href="#Serv—U服务配置" class="headerlink" title="Serv—U服务配置"></a>Serv—U服务配置</h2><p>创建新域，输入你分配给FTP的域名，然后勾选启用域，然后点下一步</p>
+<p><img src=https://pic.downk.cc/item/5e78ed399dbe9d88c57e54f6.png ></p>
+在点下一步后，会出现端口配置窗口，我们只选择FTP21端口，如果你有其它需要也可以选择其它端口
+<p><img src=https://pic.downk.cc/item/5e78ed399dbe9d88c57e54fc.png ></p>
+点下一步后，出现以下窗口，选择服务的IP地址，因为我是内网使用，所以选择默认的所有IP
+<p><img src=https://pic.downk.cc/item/5e78ed399dbe9d88c57e54e0.png ></p>
+点击下一步，进入服务器安全设置，默认使用服务器设置，即单向加密，比较安全，如果允许用户自己修改和恢复密码，勾选允许用户恢复密码，设置好后，点完成
+<p><img src=https://pic.downk.cc/item/5e78ed429dbe9d88c57e5b00.png ></p>
+点击下一步，进入服务器安全设置，默认使用服务器设置，即单向加密，比较安全，如果允许用户自己修改和恢复密码，勾选允许用户恢复密码，设置好后，点完成
+<p><img src=https://pic.downk.cc/item/5e78ed429dbe9d88c57e5b0b.png ></p>
+
+<h2 id="Serv—U用户设置"><a href="#Serv—U用户设置" class="headerlink" title="Serv—U用户设置"></a>Serv—U用户设置</h2><p>系统中没有创建用户，如果没有使用过，建议使用向导进行用户的建立，进入你自己创建的域、点击用户，在点击用户账户，然后点向导开始进行向导建立用户</p>
+<p><img src=https://pic.downk.cc/item/5e78ed429dbe9d88c57e5b12.png></p>
+添加ID和密码，添加根目录，勾选锁定用户根目录
+<p><img src=https://pic.downk.cc/item/5e78ed429dbe9d88c57e5afa.png></p>
+点击目录访问，选中home路径，点击删除按钮。删除home路径，点击添加路径，调整权限，后单击保存按钮
+<p><img src=https://pic.downk.cc/item/5e78ed4c9dbe9d88c57e6103.png ></p>
+目录权限部署完毕
+
+<h2 id="修改FTP支持中文上传和下载"><a href="#修改FTP支持中文上传和下载" class="headerlink" title="修改FTP支持中文上传和下载"></a>修改FTP支持中文上传和下载</h2><p>有时我们需要上传和下载中文文件，请按照顺序做如下修改<br>导航栏找到FTP设置</p>
+<p><img src=https://pic.downk.cc/item/5e78ed4c9dbe9d88c57e60ee.png ></p>
+目录权限部署完毕
+<p><img src=https://pic.downk.cc/item/5e78ed4c9dbe9d88c57e60f2.png ></p>
+找到OPTS UTF-8，选中禁用命令后点击保存按钮
+<p><img src=https://pic.downk.cc/item/5e78ed4c9dbe9d88c57e60f9.png ></p>
+点击全局属性—〉高级选项 取消 对所有已发送的路径和文件名使用UTF-8编码的勾选
+取消后点击保存
+
+<h2 id="访问FTP服务"><a href="#访问FTP服务" class="headerlink" title="访问FTP服务"></a>访问FTP服务</h2><p>现在测试一下FTP是否可以用我们刚才建立的用户访问，在资源管理器地址栏中输入FTP地址敲回车，然后输入用户名和密码进行登入<br>登录后，可以查看FTP中的文件并对其进行操作了</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a>  </p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KEIL C支持数据类型</title>
+    <url>/2018/05/03/keil/</url>
+    <content><![CDATA[<p>编写C语言时必须弄清每种数据类型能表示的数据范围及其占用的字节数，在满足要求的情况下应尽使用占用字节数少的数据类型，因为MCS-51单片机的存储资源是十分宝贵的。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed5d9dbe9d88c57e6b5e.jpg ></p>
+<a id="more"></a>
+下表列出了KEIL C51编译器所支持的数据类型。在标准C语言中基本的数据类型为char,int,short,long,float和double，而在C51编译器中int和short相同，float和double相同。下面来看看它们的具体定义：
+KEIL C51编译器所支持的数据类型
+---
+<p><img src=https://pic.downk.cc/item/5e78ed5d9dbe9d88c57e6b9c.png ></p>
+1． char字符类型 
+　　char类型的长度是一个字节，通常用于定义处理字符数据的变量或常量。分无符号字符类型unsigned char和有符号字符类型signed char，默认值为signed char类型。unsigned char类型用字节中所有的位来表示数值，所可以表达的数值范围是0～255。signed char类型用字节中最高位字节表示数据的符号，”0”表示正数，”1”表示负数，负数用补码表示。所能表示的数值范围是-128～+127。unsigned char常用于处理ASCII字符或用于处理小于或等于255的整型数。 
+＊正数的补码与原码相同，负二进制数的补码等于它的绝对值按位取反后加1。
+
+<p>2． int整型<br>　　int整型长度为两个字节，用于存放一个双字节数据。分有符号int整型数signed int和无符号整型数unsigned int，默认值为signed int类型。signed int表示的数值范围是-32768～+32767，字节中最高位表示数据的符号，”0”表示正数，”1”表示负数。unsigned int表示的数值范围是0～65535。</p>
+<p>3． long长整型<br>　　long长整型长度为四个字节，用于存放一个四字节数据。分有符号long长整型signed long和无符号长整型unsigned long，默认值为signed long类型。signed int表示的数值范围是-2147483648～+2147483647，字节中最高位表示数据的符号，”0”表示正数，”1”表示负数。unsigned long表示的数值范围是0～4294967295。</p>
+<p>4． float浮点型<br>　　float浮点型在十进制中具有7位有效数字，是符合IEEE－754标准的单精度浮点型数据，占用四个字节。因浮点数的结构较复杂在以后的章节中再做详细的讨论。</p>
+<p>5．*　指针型<br>　　指针型本身就是一个变量，在这个变量中存放的指向另一个数据的地址。这个指针变量要占据一定的内存单元，对不同的处理器长度也不尽相同，在C51中它的长度一般为1～3个字节。指针变量也具有类型，在以后的课程中有专门一课做探讨，这里就不多说了。</p>
+<p>6． bit位标量<br>　　bit位标量是C51编译器的一种扩充数据类型，利用它可定义一个位标量，但不能定义位指针，也不能定义位数组。它的值是一个二进制位，不是0就是1，类似一些高级语言中的Boolean类型中的True和False。</p>
+<p>7． sfr特殊功能寄存器<br>　　sfr也是一种扩充数据类型，点用一个内存单元，值域为0～255。利用它可以访问51单片机内部的所有特殊功能寄存器。如用sfr P1 = 0x90这一句定P1为P1端口在片内的寄存器，在后面的语句中我们用以用P1 = 255（对P1端口的所有引脚置高电平）之类的语句来操作特殊功能寄存器。<br>8．sfr16 16位特殊功能寄存器<br>　　sfr16占用两个内存单元，值域为0～65535。sfr16和sfr一样用于操作特殊功能寄存器，所不同的是它用于操作占两个字节的寄存器，好定时器T0和T1。</p>
+<p>9． sbit可录址位<br>　　sbit同位是C51中的一种扩充数据类型，利用它可以访问芯片内部的RAM中的可寻址位或特殊功能寄存器中的可寻址位。如先前我们定义了</p>
+<p>sfr P1 = 0x90; //因P1端口的寄存器是可位寻址的，所以我们可以定义<br>sbit P1_1 = P1＾1;　//P1_1为P1中的P1.1引脚<br>//同样我们可以用P1.1的地址去写,如sbit P1_1 = 0x91; </p>
+<p>这样我们在以后的程序语句中就可以用P1_1来对P1.1引脚进行读写操作了。通常这些可以直接使用系统提供的预处理文件，里面已定义好各特殊功能寄存器的简单名字，直接引用可以省去一点时间，我自己是一直用的。当然你也可以自己写自己的定义文件，用你认为好记的名字。</p>
+<h2 id="C语言中无符号（unsigned）和有符号（signed）的区别"><a href="#C语言中无符号（unsigned）和有符号（signed）的区别" class="headerlink" title="C语言中无符号（unsigned）和有符号（signed）的区别"></a>C语言中无符号（unsigned）和有符号（signed）的区别</h2><p>1.最大区别就是在于那个符号位 </p>
+<p>int是 两字节 16位 但是有效位为15 第1位为符合位<br>unsigned int 的有效位为16 但是不能表示负数的<br>例如：int 1111 1111 1111 1111和unsigned int1111 1111 1111 111是不一样的<br>前者是 -1后者是65535</p>
+<p>2.表示的范围不同</p>
+<p>无符号整形只有0和正数，没有负数，正数的上限扩大一倍（占用了负数的空间）</p>
+<p>比如 char 的范围是 -128 - 127<br>那么 unsigned char的范围就是 0-256</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a>  </p>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决Javac 编译时报&quot;编码GBK的不可映射字符</title>
+    <url>/2018/04/08/utf/</url>
+    <content><![CDATA[<p>在java代码中出现汉字时，编译会报错</p>
+<p><img src=https://pic.downk.cc/item/5e78eda99dbe9d88c57e9bea.jpg ></p>
+<a id="more"></a>
+
+<pre><code>public class helloworld {
+    public static void main(String[] args) {
+        System.out.println(&quot;你好哇&quot;);
+    }
+}</code></pre><p>通过DOS编译 提示 错误：编码GBK的不可映射字符</p>
+<p><img src=https://pic.downk.cc/item/5e78edb09dbe9d88c57ea0e1.png ></p>
+
+<h2 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h2><p>1、 查本机区域语言设置中文没有问题<br>2、 此程序可以在eclipse上正常运行<br>右键properties-resource-text file encoding 查是UTF-8</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>1、运行是使用javac -encoding UTF-8 helloworld.java<br>编译通过 </p>
+<p><img src=https://pic.downk.cc/item/5e78edb09dbe9d88c57ea0e7.png></p>
+
+<p>2、记事本打开java源文件，另存为选择ANSI编码</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>ANSI：美国国家标准协会，系统预设的标准文字储存格式。简体中文编码GB2312，实际上它是ＡＮＳＩ的一个代码页936</p>
+<p>UTF-8：通用字集转换格式，这是为传输而设计的编码，2进制，以8位为单元对Unicode进行编码，如果使用只能在同类位元组内支持8个位元的重要资料一类的旧式传输媒体，可选择UTF-8格式。</p>
+<p>在UTF-8里，英文字符仍然跟ASCII编码一样，因此原先的函数库可以继续使用。而中文的编码范围是在0080-07FF之间，因此是2个字节表示（但这两个字节和GB编码的两个字节是不同的），用专门的Unicode处理类可以对UTF编码进行处理。</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KMS注册机激活office/windows简易教程</title>
+    <url>/2018/04/02/kms/</url>
+    <content><![CDATA[<p><img src=https://pic.downk.cc/item/5e78ed5d9dbe9d88c57e6baa.jpg ></p>
+<a id="more"></a>
+
+<h2 id="KMS工具下载"><a href="#KMS工具下载" class="headerlink" title="KMS工具下载"></a>KMS工具下载</h2><p>点击<a href="https://pan.baidu.com/s/18OGUuQH3B3AHi-QMU06oTg/" target="_blank" rel="noopener">KMS注册机</a>下载  密码：5ccn</p>
+<h2 id="激活office"><a href="#激活office" class="headerlink" title="激活office"></a>激活office</h2><p>1、下载好KMS注册机后，解压到任意位置，关闭所有杀毒软件，双击打开；<br>2、点击Main中的Activition,将会看到Activate Office，点击它，等待；</p>
+<p><img src=https://pic.downk.cc/item/5e78ed5d9dbe9d88c57e6b4f.png ></p>
+3、将会看到下图，点击Continue；
+<p><img src=/https://pic.downk.cc/item/5e78ed5d9dbe9d88c57e6b58.png ></p>
+4、等待安装各类插件
+<p><img src=https://pic.downk.cc/item/5e78ed6c9dbe9d88c57e75d8.png></p>
+5、待蓝色框内出现successful，并听到office提示音即为注册完成
+<p><img src=https://pic.downk.cc/item/5e78ed6c9dbe9d88c57e75df.png ></p>
+6、可在帐户中查看是否激活（一般为激活6个月）
+<p><img src=https://pic.downk.cc/item/5e78ed6c9dbe9d88c57e75e6.png ></p>
+
+<h2 id="激活windows"><a href="#激活windows" class="headerlink" title="激活windows"></a>激活windows</h2><p>跟激活office类似，不过是在Main中的Activition点击Activate Windows，等待蓝色框出现successful即为激活完成。</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简述C语言的函数指针</title>
+    <url>/2018/03/20/hanshu/</url>
+    <content><![CDATA[<p>在C语言中，函数的参数不仅可以是整数、小数、字符等具体的数据，还可以是指向它们的指针。用指针变量作函数参数可以将函数外部的地址传递到函数内部，使得在函数内部可以操作函数外部的数据，并且这些数据不会随着函数的结束而被销毁。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed569dbe9d88c57e66fa.jpg ></p>
+<a id="more"></a>
+
+<p>像数组、字符串、动态分配的内存等都是一系列数据的集合，没有办法通过一个参数全部传入函数内部，只能传递它们的指针，在函数内部通过指针来影响这些数据集合。<br>有的时候，对于整数、小数、字符等基本类型数据的操作也必须要借助指针，一个典型的例子就是交换两个变量的值。</p>
+<pre><code>#include &lt;stdio.h&gt;
+void swap(int a, int b){
+  int temp; //临时变量
+  temp = a;
+  a = b;
+  b = temp;
+}
+int main(){
+  int a = 66, b = 99;
+  swap(a, b);
+  printf(&quot;a = %d, b = %d\n&quot;, a, b);
+  return 0;
+}</code></pre><p>运行结果：<br>a = 66, b = 99</p>
+<p>从结果可以看出，a、b 的值并没有发生改变，交换失败。这是因为 swap() 函数内部的 a、b 和 main() 函数内部的 a、b 是不同的变量，占用不同的内存，它们除了名字一样，没有其他任何关系，swap() 交换的是它内部 a、b 的值，不会影响它外部（main() 内部） a、b 的值。<br>改用指针变量作参数后就很容易解决上面的问题：</p>
+<pre><code>#include &lt;stdio.h&gt;
+void swap(int *p1, int *p2){
+  int temp; //临时变量
+  temp = *p1;
+  *p1 = *p2;
+  *p2 = temp;
+}
+int main(){
+  int a = 66, b = 99;
+  swap(&amp;a, &amp;b);
+  printf(&quot;a = %d, b = %d\n&quot;, a, b);
+  return 0;
+}</code></pre><p>运行结果：<br>a = 99, b = 66</p>
+<p>调用 swap() 函数时，将变量 a、b 的地址分别赋值给 p1、p2，这样 <em>p1、</em>p2 代表的就是变量 a、b 本身，交换 <em>p1、</em>p2 的值也就是交换 a、b 的值。函数运行结束后虽然会将 p1、p2 销毁，但它对外部 a、b 造成的影响是“持久化”的，不会随着函数的结束而“恢复原样”。<br>需要注意的是临时变量 temp，它的作用特别重要，因为执行*p1 = *p2;语句后 a 的值会被 b 的值覆盖，如果不先将 a 的值保存起来以后就找不到了。</p>
+<h2 id="用数组作函数参数"><a href="#用数组作函数参数" class="headerlink" title="用数组作函数参数"></a>用数组作函数参数</h2><p>数组是一系列数据的集合，无法通过参数将它们一次性传递到函数内部，如果希望在函数内部操作数组，必须传递数组指针。下面的例子定义了一个函数 max()，用来查找数组中值最大的元素：</p>
+<pre><code>#include &lt;stdio.h&gt;
+int max(int *intArr, int len){
+  int i, maxValue = intArr[0]; //假设第0个元素是最大值
+  for(i=1; i&lt;len; i++){
+    if(maxValue &lt; intArr[i]){
+      maxValue = intArr[i];
+    }
+  }
+
+  return maxValue;
+}
+int main(){
+  int nums[6], i, maxValue;
+  int len = sizeof(nums)/sizeof(int);
+  //读取用户输入的数据并赋值给数组元素
+  for(i=0; i&lt;len; i++){
+    scanf(&quot;%d&quot;, nums+i);
+  }
+  printf(&quot;Max value is %d!\n&quot;, max(nums, len));
+  return 0;
+}</code></pre><p>运行结果：<br>12 55 30 8 93 27↙<br>Max value is 93!</p>
+<p>参数 intArr 仅仅是一个数组指针，在函数内部无法通过这个指针获得数组长度，必须将数组长度作为函数参数传递到函数内部。数组 nums 的每个元素都是整数，scanf() 在读取用户输入的整数时，要求给出存储它的内存的地址，nums+i就是第 i 个数组元素的地址。<br>用数组做函数参数时，参数也能够以“真正”的数组形式给出。例如对于上面的 max() 函数，它的参数可以写成下面的形式：</p>
+<pre><code>int max(int intArr[6], int len){
+  int i, maxValue = intArr[0]; //假设第0个元素是最大值
+  for(i=1; i&lt;len; i++){
+    if(maxValue &lt; intArr[i]){
+      maxValue = intArr[i];
+    }
+  }
+  return maxValue;
+}</code></pre><p>int intArr[6]好像定义了一个拥有 6 个元素的数组，调用 max() 时可以将数组的所有元素“一股脑”传递进来。</p>
+<p>也可以省略数组长度，把形参简写为下面的形式：</p>
+<pre><code>int max(int intArr[], int len){
+  int i, maxValue = intArr[0]; //假设第0个元素是最大值
+  for(i=1; i&lt;len; i++){
+    if(maxValue &lt; intArr[i]){
+      maxValue = intArr[i];
+    }
+  }
+  return maxValue;
+}</code></pre><p>int intArr[]   虽然定义了一个数组，但没有指定数组长度，好像可以接受任意长度的数组。<br>实际上这两种形式的数组定义都是假象，不管是int intArr[6]还是int intArr[]都不会创建一个数组出来，编译器也不会为它们分配内存，实际的数组是不存在的，它们最终还是会转换为int *intArr这样的指针。这就意味着，两种形式都不能将数组的所有元素“一股脑”传递进来，大家还得规规矩矩使用数组指针。<br>int intArr[6]这种形式只能说明函数期望用户传递的数组有 6 个元素，并不意味着数组只能有 6 个元素，真正传递的数组可以有少于或多于 6 个的元素。<br>需要强调的是，不管使用哪种方式传递数组，都不能在函数内部求得数组长度，因为 intArr 仅仅是一个指针，而不是真正的数组，所以必须要额外增加一个参数来传递数组长度。<br>C语言为什么不允许直接传递数组的所有元素，而必须传递数组指针呢？<br>参数的传递本质上是一次赋值的过程，赋值就是对内存进行拷贝。所谓内存拷贝，是指将一块内存上的数据复制到另一块内存上。<br>对于像 int、float、char 等基本类型的数据，它们占用的内存往往只有几个字节，对它们进行内存拷贝非常快速。而数组是一系列数据的集合，数据的数量没有限制，可能很少，也可能成千上万，对它们进行内存拷贝有可能是一个漫长的过程，会严重拖慢程序的效率，为了防止技艺不佳的程序员写出低效的代码，C语言没有从语法上支持数据集合的直接赋值。</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简述C语言动态数组的构成</title>
+    <url>/2018/03/11/dynamic-array/</url>
+    <content><![CDATA[<p><img src=https://pic.downk.cc/item/5e78ecf79dbe9d88c57e2a7f.jpg ></p>
+数组的优点在于随机存取，然而其的缺点也是十分明显的 ，就是一旦建立其大小就不能够改变。<a id="more"></a>若用数组存储数据，则需创建一个可能存放最大空间的数组，这无疑是浪费空间。动态数组就很好的解决了这个问题。动态数组的思维思路是：先建立一定大小的数组，向这个数组存放数据，如果数组已满，则重新申请一个更大的空间来存放。每次重新申请时可以指定增量的大小(一般为原来数据的1.5倍)，也可以固定大小。这样做的好处是空间浪费不多，其不足是重新申请空间浪费时间，每次重新申请空间时须将原来的数据拷贝到新申请的空间，当数组很大时，这种浪费还是相当可观的。
+
+<p>接下来是对动态数组实现的说明：<br>    先建立动态数组的存储结构：</p>
+<pre><code>typedef struct _DArray
+{
+    int size;
+    int count;
+    void **data;
+}DArray;</code></pre><p>接下来定义一个enum来存放程序中函数的返回值，可以不定义：</p>
+<pre><code>typedef enum _Ret
+{
+    RET_OK = 1,
+    RET_FAIL,
+    RET_OOM    
+}Ret;</code></pre><p>为了使程序更具通用性可以定义一个回调函数原型，用于回调</p>
+<pre><code>typedef void (*VisitFunc)(void *ctx, void *data);</code></pre><p>定义一个用于测试的宏</p>
+<pre><code>#define return_val_if_fail(p, val)/
+if(!(p)){printf(&quot;%s:%d&quot;#p&quot; failed./n&quot;,__func__,__LINE__); return val;}</code></pre><p>下面定义数组的基本操作，包括：</p>
+<pre><code>DArray *darray_create();
+static Ret darray_expand(DArray *darray, int needone);
+Ret darray_preapppend(DArray *darray, void * data);
+Ret darray_append(DArray *darray, void * data);
+Ret darray_insert(DArray *darray, int index, void * data);
+Ret darray_delete(DArray *darray, int index);
+Ret darray_shrink(DArray *darray);
+int darray_len(DArray * darray);
+Ret darray_set_by_index(DArray *darray, int index, void *data);
+Ret darray_foreach(DArray *darray, VisitFunc visitfunc, void *ctx);
+Ret darray_destroy(DArray *darray);</code></pre><p>头文件基本定义结束，保存为darray.h<br>为了优化一般会在头文件中定义选择编译的宏</p>
+<pre><code>#ifndef DARRAY_H
+#define DARRAY_H
+。。。
+。。。
+#endif /*DARRAY_H*/</code></pre><p>避免重复编译</p>
+<p>完整头文件如下(darray.h)：</p>
+<pre><code>#ifndef DARRAY_H
+#define DARRAY_H
+#define DEFAULT_A_SIZE 10</code></pre><p>/*</p>
+<ul>
+<li>File:   darray.h：动态数组函数实现</li>
+<li>/</li>
+</ul>
+<pre><code>typedef struct _DArray
+{
+    int size;
+    int count;
+    void **data;
+
+}DArray;
+
+typedef enum _Ret
+{
+    RET_OK = 1,
+    RET_FAIL,
+    RET_OOM    
+}Ret;
+
+typedef void (*VisitFunc)(void *ctx, void *data);
+
+#define return_val_if_fail(p, val)/
+    if(!(p)){printf(&quot;%s:%d&quot;#p&quot; failed./n&quot;,__func__,__LINE__); return val;}
+
+DArray *darray_create();
+static Ret darray_expand(DArray *darray, int needone);
+Ret darray_preapppend(DArray *darray, void * data);
+Ret darray_append(DArray *darray, void * data);
+Ret darray_insert(DArray *darray, int index, void * data);
+Ret darray_delete(DArray *darray, int index);
+Ret darray_shrink(DArray *darray);    
+int darray_len(DArray * darray);
+Ret darray_set_by_index(DArray *darray, int index, void *data);
+Ret darray_foreach(DArray *darray, VisitFunc visitfunc, void *ctx);
+Ret darray_destroy(DArray *darray);
+
+#endif /*DARRAY_H*/</code></pre><p>以下是函数实现部分（darray.c）：</p>
+<pre><code>#include &quot;darray.h&quot;
+#include &lt;malloc.h&gt;</code></pre><p>/*</p>
+<ul>
+<li><p>File:   darray.c：动态数组函数实现</p>
+</li>
+<li><p>/</p>
+<p>   /*<br>   *功能：实现一个DArray结构体的初始化<br>   *参数：void<br>   *返回：DArray结构体<br>   */</p>
+</li>
+</ul>
+<pre><code>DArray *darray_create()
+{        
+    int i = 0;
+    DArray *darray = (DArray *)malloc(sizeof(DArray));
+    if(darray != NULL)
+    {
+        darray-&gt;count = 0;
+        darray-&gt;size = 0;
+        darray-&gt;data = (void **)malloc(sizeof(void *) * DEFAULT_A_SIZE);
+
+        if(darray-&gt;data !=NULL)
+        {
+            darray-&gt;size = DEFAULT_A_SIZE;
+            for(i = 0; i &lt;darray-&gt;size;i++ )
+            {
+                darray-&gt;data[i] = NULL;
+            }
+        }        
+        return darray;
+    }
+
+    return NULL;
+}
+/*
+*功能：添加（尾）元素
+*参数：darray:指定数组  data：插入的数据的指针
+*返回：Ret 
+*/
+
+
+Ret darray_append(DArray *darray,void * data)
+{
+    return_val_if_fail(darray != NULL &amp;&amp; data != NULL, RET_FAIL);
+
+    if(darray ==NULL || data == NULL)    
+    {
+        return RET_FAIL;
+    }
+
+    if((darray-&gt;count + 1 ) &gt;= darray-&gt;size)
+    {    
+        darray_expand(darray, 2);
+
+    }
+
+    darray-&gt;data[darray-&gt;count] = data;
+
+    darray-&gt;count++;
+
+    return RET_OK;
+
+}</code></pre><p>/*<br>*功能：替换数组指定位置的值<br>*参数：参数：darray:指定数组 index：插入位置 data：插入的数据的指针<br>*/</p>
+<pre><code>Ret darray_set_by_index(DArray *darray, int index, void *data)
+{
+    return_val_if_fail(darray != NULL &amp;&amp; data != NULL, RET_FAIL);
+
+    if(darray ==NULL || data == NULL)
+    {
+        return RET_FAIL;
+    }
+    if(index &lt;0 || index &gt;= darray-&gt;count)
+    {    
+        return RET_FAIL;
+    }
+
+    darray-&gt;data[index] = data;
+    return RET_OK;
+
+}</code></pre><p>/*<br>*功能：增加指定数组的容量<br>*声明：有可能引起新内存申请，内存拷贝，从而改变指针具体指向<br>*参数：darray:要操作的数组指针地址 needone:要增加的数量(这里用于选择)<br>*/</p>
+<pre><code>static Ret darray_expand(DArray *darray, int needone)
+{
+    int newallocsize = 0;
+
+    if(needone == 2)
+    {
+         newallocsize = darray-&gt;count + (darray-&gt;count&gt;&gt;1)+DEFAULT_A_SIZE;
+    }
+    else
+    {
+        newallocsize = darray-&gt;count + 1;
+    }
+    void **data = (void **)realloc(darray-&gt;data, sizeof(void *) *     newallocsize);
+    if(data != NULL)
+    {
+        darray-&gt;data = data;
+        darray-&gt;size = newallocsize;
+
+    }
+    return RET_OK;
+
+}</code></pre><p>/*<br>*功能：缩减指定数组的容量<br>*声明：有可能引起新内存申请，内存拷贝，从而改变指针具体指向<br>*参数：darray:要操作的数组指针地址 （视情况缩减为原来的1.5倍，这样不会不用每次都执行内存分配）<br>*/</p>
+<pre><code>Ret darray_shrink(DArray *darray)
+{
+    if((darray-&gt;count &gt;&gt; 1) &lt; darray-&gt;size &amp;&amp; (darray-&gt;size &gt; DEFAULT_A_SIZE))
+    {
+        int newallocsize = darray-&gt;count +darray-&gt;count&gt;&gt;1;
+        void **data = (void **)realloc(darray-&gt;data, sizeof(void *) * newallocsize);
+        if(data != NULL)
+        {
+            darray-&gt;data = data;
+            darray-&gt;size = newallocsize;
+
+        }
+
+    return RET_OK;    
+    }
+}</code></pre><p>/*<br>*功能：删除元素<br>*参数：darray:指定数组  index：数据的位置<br>*返回：Ret<br>*/</p>
+<pre><code>Ret darray_delete(DArray *darray, int index)
+{
+    int i = 0;
+
+    for(i = index; (i+1) &lt; darray-&gt;count; i++)
+    {
+        darray-&gt;data[i] = darray-&gt;data[i + 1];        
+    }
+
+    darray-&gt;count--;
+
+    darray_shrink(darray);
+
+    return RET_OK;
+}</code></pre><p>/*<br>*功能：添加（头）元素<br>*参数：darray:指定数组  data：插入的数据的指针<br>*返回：Ret<br>*/</p>
+<pre><code>Ret darray_preappend(DArray *darray, void * data)
+{
+    return_val_if_fail(darray != NULL &amp;&amp; data != NULL, RET_FAIL);
+
+    if(darray ==NULL || data == NULL)
+    {
+        return RET_FAIL;
+    }
+
+    if(darray-&gt;count + 1 &gt; darray-&gt;size)
+    {
+        darray_expand(darray, 2);
+    }
+    int i = 0;
+    for(i = darray-&gt;count; i &gt;  0; )
+    {
+        darray-&gt;data[i] = darray-&gt;data[i - 1];
+        i--;
+    }
+    darray-&gt;data[0] = data;
+    darray-&gt;count++;
+
+    return RET_OK;
+}</code></pre><p>/*<br>*功能：插入元素<br>*参数：darray:指定数组 index：插入位置 data：插入的数据的指针<br>*返回：Ret<br>*/</p>
+<pre><code>Ret darray_insert(DArray *darray, int index, void * data)
+{
+    return_val_if_fail(darray != NULL &amp;&amp; data != NULL, RET_FAIL);
+
+    if(darray ==NULL || data == NULL)
+    {
+        return RET_FAIL;
+    }
+
+    if(darray-&gt;count + 1 &gt; darray-&gt;size)
+    {
+        darray_expand(darray, 1);
+    }
+    int i = 0;
+    for(i = darray-&gt;count; i &gt;  index; )
+    {
+        darray-&gt;data[i] = darray-&gt;data[i - 1];
+        i--;
+    }
+    darray-&gt;data[index] = data;
+    darray-&gt;count++;
+
+    return RET_OK;
+}</code></pre><p>/*<br>*功能：遍历数组<br>*参数：darray:指定数组 visitfunc：回调函数 ctx：上下文<br>*返回：Ret<br>*/</p>
+<pre><code>Ret darray_foreach(DArray *darray, VisitFunc visitfunc, void *ctx)
+{
+    int index = 0;
+
+    while(index &lt; darray-&gt;count)
+    {
+        visitfunc(ctx, darray-&gt;data[index]);
+        index ++;    
+    }
+
+    return RET_OK;
+}</code></pre><p>/*<br>*功能：数组长度<br>*参数：darray:指定数组<br>*返回：数组大小<br>*/</p>
+<pre><code>int darray_len(DArray * darray)
+{
+    return darray-&gt;count;
+}</code></pre><p>/*<br>*功能：释放指定数组内存<br>*参数：darray:指定数组<br>*返回：Ret<br>*/</p>
+<pre><code>Ret darray_destroy(DArray *darray)
+{
+    if(darray == NULL)
+    {
+        return RET_OK;
+    }
+
+    free(darray-&gt;data);    
+    darray-&gt;data = NULL;
+
+    free(darray);
+    darray = NULL;
+    return RET_OK;
+}
+（darraytest.c）
+
+#include &quot;darray.h&quot;
+#include &lt;assert.h&gt;
+#include &lt;stdio.h&gt;</code></pre><p>/*</p>
+<ul>
+<li>File:   darraytest.c：动态数组函数实现</li>
+<li>/<br>/*</li>
+<li>功能：测试的打印函数，用于回调</li>
+<li>/</li>
+</ul>
+<pre><code>void print_int(void *ctx, void *data)
+{
+    printf(&quot;.........%d/n&quot;,*(int *)data);
+}
+
+int main(int argc, char *argv[])
+{
+
+    int i = 0;
+    int a = 8;
+    int b = 9999;
+    int c = 555;
+    int u = 7777;</code></pre><p>/*    int i = 0;<br>    char *a =”aaaaa”;<br>    char *b = “bbbbbbbbb”;<br>    char *c = “ccccccc”;<br>    char *u = “uuuuuuuuuuuu”;<br>*/</p>
+<pre><code>    DArray *darray = darray_create();
+
+    for(i  = 0;i &lt;23; )
+    {
+        darray_append(darray, &amp;a);
+        i++;
+    }
+
+    darray_insert(darray, 3, &amp;b);    
+    darray_set_by_index(darray, 20, &amp;u);
+
+    for(i = 0; i &lt; 16; i++)
+    {
+        darray_delete(darray, 0);
+    }
+
+    darray_preappend(darray, &amp;b);
+    int j = 0;
+    for(j = 0;j &lt; darray-&gt;count; )
+    {    
+        printf(&quot;%d/n&quot;,*(int*)darray-&gt;data[j]);
+        j++;
+    }
+
+
+    darray_append(darray,&amp;b);
+    darray_append(darray,&amp;b);
+    darray_append(darray,&amp;b);
+    printf(&quot;%d/n&quot;,darray-&gt;size);
+    darray_foreach(darray, print_int, NULL);
+    darray_destroy(darray);
+}</code></pre><hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sublime Text 3中配置编译和运行Java</title>
+    <url>/2018/03/02/java/</url>
+    <content><![CDATA[<p>最近开始学习面向对象Java程序设计，在一如既往使用sublime写代码的时候，发现运行不了，只能编译，而老师介绍的是使用命令符编译运行，太多麻烦，效率较低。于是通过网上整理得出此简易教程。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed569dbe9d88c57e66f4.jpg ></p>
+<a id="more"></a>
+
+<p>打开Sublime Text 3，依次点击Preference, Browse Packages，在打开的窗口中双击User文件夹 ，新建文件JavaC.sublime-build(注意这里后缀是”.sublime-build”，而不是”.txt”)，用记事本打开，粘贴下面的代码并保存关闭：</p>
+<pre><code>{
+&quot;cmd&quot;: [&quot;javac&quot;,&quot;-encoding&quot;,&quot;UTF-8&quot;,&quot;-d&quot;,&quot;.&quot;,&quot;$file&quot;],
+&quot;file_regex&quot;: &quot;^(...*?):([0-9]*):?([0-9]*)&quot;,
+&quot;selector&quot;: &quot;source.java&quot;,
+&quot;encoding&quot;:&quot;GBK&quot;,
+//执行完上面的命令就结束
+// 下面的命令需要按Ctrl+Shift+b来运行
+    &quot;variants&quot;:
+    [
+        {
+            &quot;name&quot;: &quot;Run&quot;,
+            &quot;shell&quot;: true,
+            &quot;cmd&quot; :  [&quot;start&quot;,&quot;cmd&quot;,&quot;/c&quot;, &quot;java ${file_base_name} &amp;echo. &amp; pause&quot;],
+            // /c是执行完命令后关闭cmd窗口,
+            // /k是执行完命令后不关闭cmd窗口。
+            // echo. 相当于输入一个回车
+            // pause命令使cmd窗口按任意键后才关闭
+            &quot;working_dir&quot;: &quot;${file_path}&quot;,
+            &quot;encoding&quot;:&quot;GBK&quot;
+        }
+    ]
+}</code></pre><p>再回到代码界面就能直接编译运行了。</p>
+<pre><code>ctrl+B编译，Ctrl+shift+b运行。</code></pre><hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电脑磁盘分区简易教程</title>
+    <url>/2018/01/23/fenqu/</url>
+    <content><![CDATA[<p>win10如何分区</p>
+<p><img src=https://pic.downk.cc/item/5e78ed029dbe9d88c57e3142.jpg ></p>
+<a id="more"></a>
+
+<p>进行分区之前，我们必须进入系统的磁盘管理。进入磁盘管理的方式有两种。一种是通过电脑属性，进入磁盘管理。第二种是直接右键点击windows键（windows+X）选择磁盘管理。<br>这里以第一种为例，右键点击我的电脑，然后选择“管理”。如图示，然后选择磁盘管理。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed169dbe9d88c57e3d35.png ></p>
+
+<p>进入磁盘管理之后，我们可以看到我的分区情况。然后选择你需要进行分区的磁盘，点击右键，然后选择“压缩卷”，如图示。这个操作比较的简单。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed229dbe9d88c57e4446.png ></p>
+
+<p>系统会自动的查询压缩空间，这个时间就需要看电脑的配置。然后我们选择好需要压缩空间的大小。点击压缩即可。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed229dbe9d88c57e444e.png></p>
+等一会，空间就压缩好了。如图示会出现一个可用的空间。这就是我们刚才压缩出来的空间。然后我们选中该空白分区，点击右键，选择“新建简单卷”。
+<p><img src=https://pic.downk.cc/item/5e78ed229dbe9d88c57e4437.png ></p>
+然后我们指定卷的大小，我们可以输入自己想要的大小。然后点击“下一步”。为你新建的简单卷，选择盘符。默认的就OK。然后为你新建的简单卷选择磁盘的格式，这里我们一般选择“NTFS”就好了。
+<p><img src=https://pic.downk.cc/item/5e78ed229dbe9d88c57e443a.png ></p>
+最后，我们点击完成。等待一会就好了，再次打开我的电脑就能看到新分出来的D盘了。
+<p><img src=https://pic.downk.cc/item/5e78ed229dbe9d88c57e4441.png ></p>
+
+<p>因为电脑C盘为系统盘，所以希望养成良好的习惯，尽量不要将软件安装到C盘，常用的文件也尽量不要放在桌面，在D盘建立文件夹，做好分类整理，可以保证你的电脑更加快速运行。</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ppt设计</title>
+    <url>/2018/01/12/ppt/</url>
+    <content><![CDATA[<p><img src=https://pic.downk.cc/item/5e78ed989dbe9d88c57e9387.jpg ></p>
+
+<h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>我对PPT的定位是演讲的辅助工具，如果你认为你需要做一个华丽丽的动画，那就移步吧，hiahia~在演讲的时候，你要传达的信息通过三个途径实现——你的肢体、你的语言、你的PPT，尽量不要越俎代庖，喧宾夺主的事儿更不能干了。所以你就应该可以明白为什么大家都不提倡在PPT中放大量文字了——如果PPT把你要讲的东西都显示出来了，还要你干什么？</p>
+<a id="more"></a>
+<h2 id="1-动画"><a href="#1-动画" class="headerlink" title="1.动画"></a>1.动画</h2><p>个人观点认为动画并不重要，动画做不好没有关系，不做就可以了。但是切忌把一个动画做的时间太长且毫无意义：你可以想想一个百叶窗效果用5s显示出来观众草泥马的心情吗？你能理解为什么一个图片旋转5s还没停下来吗？要是不能赋予明确的意义，那就把动画全部舍弃。如果要进阶，最好控制一个变换中所有的动画在2s之内放完（其实我想说1s的）。转场动画2013版新增的都不错，爱用用吧。</p>
+<h2 id="2-配色"><a href="#2-配色" class="headerlink" title="2.配色"></a>2.配色</h2><p>建议的配色技巧是这样的：<br>不要出现纯白色，要用白色的话把取色点（鬼才知道叫什么）,或者选色系相近且有一定分辨效果的</p>
+<p><img src=https://pic.downk.cc/item/5e78ed989dbe9d88c57e938e.png ></p>
+这样看起来不是那么刺眼，有一个视觉缓冲时间，给人一种愉悦感
+
+<h2 id="3-字体"><a href="#3-字体" class="headerlink" title="3.字体"></a>3.字体</h2><p>字体一定要选择跟主题匹配的，比如报告、汇报总结之类的尽量选择：中文微软雅黑，英文Segoe UI Light 8</p>
+<p><img src=https://pic.downk.cc/item/5e78ed989dbe9d88c57e9393.png></p>
+其他相对活泼一点的主题便可以选择一些略微花哨的字体，强烈推荐张海山锐线简体，可以百度自行安装
+
+<h2 id="4-布局"><a href="#4-布局" class="headerlink" title="4.布局"></a>4.布局</h2><p>切记多图少文！图片占页面的三分之二最佳</p>
+<h2 id="5-图片素材"><a href="#5-图片素材" class="headerlink" title="5.图片素材"></a>5.图片素材</h2><p>最怕看到ppt里面的配图有水印或者高糊了，拉低了整个ppt的逼格，ppt本身就是设计<br>关于目前流行的PPT设计风格：<br>高上大 扁平化 长投影 复古 UI风格 WIN8 Style 纯动画<br>可自行搜索相关关键字<br>另附上几个常用的图片素材网站：<br><a href="https://www.vcg.com/creative" target="_blank" rel="noopener">https://www.vcg.com/creative</a><br><a href="https://www.pixabay.com" target="_blank" rel="noopener">https://www.pixabay.com</a><br><a href="https://www.pexels.com/" target="_blank" rel="noopener">https://www.pexels.com/</a></p>
+<p>总之，最好的是PPT素食主义：简单清晰即好，太多的元素干扰只会影响观众对信息的接收。</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vim的常用命令使用</title>
+    <url>/2018/01/12/vim/</url>
+    <content><![CDATA[<p>之前去校acm俱乐部水了一段时间，发现他们习惯使用vim做编译器，在算法比赛中每一分每一秒都尤为重要，正好vim的各种快捷命令可以节省大量的时间</p>
+<p><img src=https://pic.downk.cc/item/5e78edb09dbe9d88c57ea0cb.jpg ></p>
+<a id="more"></a>  
+
+<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p>正常模式（按Esc进入） 左下角显示文件名或为空</p>
+<p>插入模式（按i键进入） 左下角显示–INSERT–i 在当前位置生前插入</p>
+<p>:w! test.cpp(建立文件，test为文件名，自己定)</p>
+<p>:w 保存</p>
+<p>:e! test.cpp (打开文件test)</p>
+<p>a 在当前位置后插入</p>
+<p>A 在当前行尾插入</p>
+<p>o 在当前行之后插入一行</p>
+<p>O 在当前行之前插入一行</p>
+<p>dd 删除当前行</p>
+<p>ndd 从当前行删除n行</p>
+<p>yy 拷贝当前行</p>
+<p>nyy 拷贝当前后开始的n行，比如2yy拷贝当前行及其下一行。</p>
+<p>u 撤销</p>
+<p>Ctrl + r 重做，即撤销的撤销。</p>
+<p>F9 编译</p>
+<p>F10 运行</p>
+<p>F3 打开.in（.in 就是你要输入的数据）</p>
+<p>F4 编译运行.in</p>
+<p>自己多写写，提高写代码的速度，熟悉vim的基本操作</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正方教务管理系统一键评教脚本</title>
+    <url>/2018/01/12/teaching/</url>
+    <content><![CDATA[<p>每学期都会有一次教务评价，有好多个不同的老师，每个老师又细分不同的打分项，打分项又分为1、<br>2、3、4、5，麻烦的要死，为了偷懒，便做了这个脚本，主要用javascipt</p>
+<p><img src=https://pic.downk.cc/item/5e78eda99dbe9d88c57e9bda.jpg ></p>
+<a id="more"></a>
+代码如下：
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">javascript: ( function()&#123; var obj&#x3D;$(&#39;iframeautoheight&#39;).contentDocument.getElementsByTagName(&#39;select&#39;); for (i &#x3D; 1; i &lt; obj.length; i++)&#123; obj[i].value &#x3D; &#39;5(%E4%BC%98%E7%A7%80)&#39;; &#125; var rid&#x3D;Math.max(1, Math.floor(Math.random()*obj.length)); obj[rid].value&#x3D;&#39;4(%E8%89%AF%E5%A5%BD)&#39;; $(&#39;iframeautoheight&#39;).contentDocument.getElementById(&#39;Button1&#39;).click(); &#125; ) ()</span><br></pre></td></tr></table></figure>
+
+<p>将以上代码复制，然后打开谷歌浏览器，按Ctrl+shift+B，浏览器上方显示书签栏，在书签栏右键添加网页，如图：</p>
+<p><img src=https://pic.downk.cc/item/5e78eda99dbe9d88c57e9bf2.png ></p>
+
+<p>名称随便写，自己知道就行，网址栏将上方的js代码粘贴进去，保存。<br>登录正方教务管理系统，打开教务评价，点击浏览器上方的你刚刚输入的名称标签，你就会发现，点一下，一整页就评价好了</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用hexo搭建github.io博客-更换主题</title>
+    <url>/2018/01/12/hexotheme/</url>
+    <content><![CDATA[<p>在搭建配置github教程完成后,我们知道了要怎么来发布博客文章,但是,这个博客丑了点,这篇就来说说怎么更换主题让博客变得高大上</p>
+<p><img src=https://pic.downk.cc/item/5e78eda99dbe9d88c57e9be0.png ></p>
+
+<a id="more"></a>
+<h2 id="一-寻找喜欢的主题"><a href="#一-寻找喜欢的主题" class="headerlink" title="一.寻找喜欢的主题"></a>一.寻找喜欢的主题</h2><p>可以在<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">https://github.com/hexojs/hexo/wiki/Themes</a> 这里找到自己喜欢的主题</p>
+<p>我自己找到了一款更好看的</p>
+<p>以我自己的安装过程为例:</p>
+<h2 id="二-安装主题"><a href="#二-安装主题" class="headerlink" title="二.安装主题:"></a>二.安装主题:</h2><p>到hexo所在的路径下E:hexo,右键打开Git Bush,执行:</p>
+<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></pre><h2 id="三-使用主题"><a href="#三-使用主题" class="headerlink" title="三.使用主题:"></a>三.使用主题:</h2><p>打开_config.yml做如下修改:</p>
+<pre><code>theme: yilia</code></pre><h2 id="四-更新主题"><a href="#四-更新主题" class="headerlink" title="四.更新主题:"></a>四.更新主题:</h2><pre><code>主题配置在E:\hexo\themes\yilia下的_config.yml:</code></pre><p>我是这样配置的:</p>
+<figure class="highlight plain"><figcaption><span>Header</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">menu:</span><br><span class="line">  主页: &#x2F;</span><br><span class="line"># SubNav</span><br><span class="line">subnav:</span><br><span class="line">  github: &quot;https:&#x2F;&#x2F;github.com&#x2F;Berome&quot;</span><br><span class="line">  weibo: &quot;https:&#x2F;&#x2F;weibo.com&#x2F;5831380813&#x2F;profile?rightmod&#x3D;1&amp;wvr&#x3D;6&amp;mod&#x3D;personinfo&amp;is_all&#x3D;1&quot;</span><br><span class="line">  #rss: &quot;#&quot;</span><br><span class="line">  zhihu: &quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;ding-dang-mao-70-78&#x2F;activities&quot;</span><br><span class="line">  #qq: &quot;#&quot;</span><br><span class="line">  #weixin: &quot;#&quot;</span><br><span class="line">  #jianshu: &quot;#&quot;</span><br><span class="line">  #douban: &quot;#&quot;</span><br><span class="line">  #segmentfault: &quot;#&quot;</span><br><span class="line">  #bilibili: &quot;#&quot;</span><br><span class="line">  #acfun: &quot;#&quot;</span><br><span class="line">  #mail: &quot;mailto:litten225@qq.com&quot;</span><br><span class="line">  #facebook: &quot;#&quot;</span><br><span class="line">  #google: &quot;#&quot;</span><br><span class="line">  #twitter: &quot;#&quot;</span><br><span class="line">  #linkedin: &quot;#&quot;</span><br><span class="line"></span><br><span class="line">rss: &#x2F;atom.xml</span><br><span class="line"></span><br><span class="line"># 是否需要修改 root 路径</span><br><span class="line"># 如果您的网站存放在子目录中，例如 http:&#x2F;&#x2F;yoursite.com&#x2F;blog，</span><br><span class="line"># 请将您的 url 设为 http:&#x2F;&#x2F;yoursite.com&#x2F;blog 并把 root 设为 &#x2F;blog&#x2F;。</span><br><span class="line">root: &#x2F;</span><br><span class="line"></span><br><span class="line"># Content</span><br><span class="line"></span><br><span class="line"># 文章太长，截断按钮文字</span><br><span class="line">excerpt_link: more</span><br><span class="line"># 文章卡片右下角常驻链接，不需要请设置为false</span><br><span class="line">show_all_link: &#39;展开全文&#39;</span><br><span class="line"># 数学公式</span><br><span class="line">mathjax: false</span><br><span class="line"># 是否在新窗口打开链接</span><br><span class="line">open_in_new: false</span><br><span class="line"></span><br><span class="line"># 打赏</span><br><span class="line"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span><br><span class="line">reward_type: 2</span><br><span class="line"># 打赏wording</span><br><span class="line">reward_wording: &#39;谢谢你请我吃糖果&#39;</span><br><span class="line"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：&#x2F;assets&#x2F;img&#x2F;alipay.jpg</span><br><span class="line">alipay: &#x2F;uploads&#x2F;zhifu.jpg</span><br><span class="line"># 微信二维码图片地址</span><br><span class="line">weixin: &#x2F;uploads&#x2F;weixin.jpg</span><br><span class="line"></span><br><span class="line"># 目录</span><br><span class="line"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span><br><span class="line">toc: 1</span><br><span class="line"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span><br><span class="line">toc_hide_index: true</span><br><span class="line"># 目录为空时的提示</span><br><span class="line">toc_empty_wording: &#39;目录，不存在的…&#39;</span><br><span class="line"></span><br><span class="line"># 是否有快速回到顶部的按钮</span><br><span class="line">top: true</span><br><span class="line"></span><br><span class="line"># Miscellaneous</span><br><span class="line">baidu_analytics: &#39;&#39;</span><br><span class="line">google_analytics: &#39;&#39;</span><br><span class="line">favicon: &#x2F;favicon.png</span><br><span class="line"></span><br><span class="line">#你的头像url</span><br><span class="line">avatar: &#x2F;uploads&#x2F;berome.jpg</span><br><span class="line"></span><br><span class="line">#是否开启分享</span><br><span class="line">share_jia: true</span><br><span class="line"></span><br><span class="line">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span><br><span class="line">#不需要使用某项，直接设置值为false，或注释掉</span><br><span class="line">#具体请参考wiki：https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia&#x2F;wiki&#x2F;</span><br><span class="line"></span><br><span class="line">#1、多说</span><br><span class="line">duoshuo: false</span><br><span class="line"></span><br><span class="line">#2、网易云跟帖</span><br><span class="line">wangyiyun: false</span><br><span class="line"></span><br><span class="line">#3、畅言</span><br><span class="line">changyan_appid: false</span><br><span class="line">changyan_conf: false</span><br><span class="line"></span><br><span class="line">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span><br><span class="line">disqus: false</span><br><span class="line"></span><br><span class="line">#5、Gitment</span><br><span class="line">gitment_owner: false      #你的 GitHub ID</span><br><span class="line">gitment_repo: &#39;&#39;          #存储评论的 repo</span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: &#39;&#39;           #client ID</span><br><span class="line">  client_secret: &#39;&#39;       #client secret</span><br><span class="line"></span><br><span class="line"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span><br><span class="line">style:</span><br><span class="line">  # 头像上面的背景颜色</span><br><span class="line">  header: &#39;#4d4d4d&#39;</span><br><span class="line">  # 右滑板块背景</span><br><span class="line">  slider: &#39;linear-gradient(200deg,#a0cfe4,#e8c37e)&#39;</span><br><span class="line"></span><br><span class="line"># slider的设置</span><br><span class="line">slider:</span><br><span class="line">  # 是否默认展开tags板块</span><br><span class="line">  showTags: false</span><br><span class="line"></span><br><span class="line"># 智能菜单</span><br><span class="line"># 如不需要，将该对应项置为false</span><br><span class="line"># 比如</span><br><span class="line">#smart_menu:</span><br><span class="line">#  friends: false</span><br><span class="line">smart_menu:</span><br><span class="line">  innerArchive: &#39;所有文章&#39;</span><br><span class="line">  friends: &#39;友链&#39;</span><br><span class="line">  aboutme: &#39;关于我&#39;</span><br><span class="line"></span><br><span class="line">friends:</span><br><span class="line">  西南民大物联网科协: http:&#x2F;&#x2F;smuiot.cn&#x2F;</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">aboutme: 我从来不愿向别人说起我的名字，我觉得这是很私密的东西。&lt;br&gt;&lt;br&gt;但是如果你下一次在面店碰见我，如果我点的是大碗牛肉面，你可以叫我一声丁博。&lt;br&gt;我会同你付钱。</span><br></pre></td></tr></table></figure>
+
+<h2 id="五-测试推送"><a href="#五-测试推送" class="headerlink" title="五.测试推送:"></a>五.测试推送:</h2><p>回到E:hexo,执行:</p>
+<pre><code>hexo g 
+hexo s</code></pre><p> 打开localhost:4000预览,就可以看到新的主题了<br>七.发布主题:</p>
+<hr>
+<pre><code>hexo d</code></pre><p>发布到github.io</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>html + javascript制作心形表白动画</title>
+    <url>/2018/01/12/heart/</url>
+    <content><![CDATA[<p><img src=https://pic.downk.cc/item/5e78ed569dbe9d88c57e66e5.png ></p>
+   由于无聊，于是有了这个
+代码如下：
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;  </span><br><span class="line">&lt;title&gt;Heart&lt;&#x2F;title&gt; </span><br><span class="line">&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;  </span><br><span class="line">&lt;&#x2F;head&gt;  </span><br><span class="line">&lt;body&gt;  </span><br><span class="line">&lt;canvas id&#x3D;&quot;c&quot;&gt;&lt;&#x2F;canvas&gt;  </span><br><span class="line">&lt;script&gt;  </span><br><span class="line">var c &#x3D; document.getElementsByTagName(&#39;canvas&#39;)[0];</span><br><span class="line">var a &#x3D; c.getContext(&#39;2d&#39;);   </span><br><span class="line">&lt;&#x2F;script&gt; </span><br><span class="line">&lt;script&gt;</span><br><span class="line">e&#x3D;[];h&#x3D;[];O&#x3D;c.width&#x3D;innerWidth;Q&#x3D;c.height&#x3D;innerHeight;v&#x3D;32;M&#x3D;Math;R&#x3D;M.random;C&#x3D;M.cos;Y&#x3D;6.3;for(i&#x3D;0;i&lt;Y;i+&#x3D;0.2)h.push([O&#x2F;2+180*M.pow(M.sin(i),3),Q&#x2F;2+10*-(15*C(i)-5*C(2*i)-2*C(3*i)-C(4*i))]);</span><br><span class="line">for(i&#x3D;0;i&lt;v;)&#123;x&#x3D;R()*O;y&#x3D;R()*Q;H&#x3D;80*(i&#x2F;v)+280;S&#x3D;40*R()+60;B&#x3D;60*R()+20;f&#x3D;[];for(k&#x3D;0;k&lt;v;)f[k++]&#x3D;&#123;x:x,y:y,X:0,Y:0,R:1-k&#x2F;v+1,S:R()+1,q:~~(R()*v),D:2*(i%2)-1,F:0.2*R()+0.7,f:&quot;hsla(&quot;+~~H+&quot;,&quot;+~~S+&quot;%,&quot;+~~B+&quot;%,.1)&quot;&#125;;e[i++]&#x3D;f&#125;</span><br><span class="line">function _(d)&#123;a.fillStyle&#x3D;d.f;a.beginPath();a.arc(d.x,d.y,d.R,0,Y,1);a.closePath();a.fill()&#125;</span><br><span class="line">setInterval(function()&#123;a.fillStyle&#x3D;&quot;rgba(0,0,0,.2)&quot;;a.fillRect(0,0,O,Q);for(i&#x3D;v;i--;)&#123;f&#x3D;e[i];u&#x3D;f[0];q&#x3D;h[u.q];D&#x3D;u.x-q[0];E&#x3D;u.y-q[1];G&#x3D;M.sqrt(D*D+E*E);10&gt;G&amp;&amp;(0.95&lt;R()?u.q&#x3D;~~(R()*v):(0.99&lt;R()&amp;&amp;(u.D*&#x3D;-1),u.q+&#x3D;u.D,u.q%&#x3D;v,0&gt;u.q&amp;&amp;(u.q+&#x3D;v)));u.X+&#x3D;-D&#x2F;G*u.S;u.Y+&#x3D;-E&#x2F;G*u.S;u.x+&#x3D;u.X;u.y+&#x3D;u.Y;_(u);u.X*&#x3D;u.F;u.Y*&#x3D;u.F;for(k&#x3D;0;k&lt;v-1;)T&#x3D;f[k],N&#x3D;f[++k],N.x-&#x3D;0.7*(N.x-T.x),N.y-&#x3D;0.7*(N.y-T.y),_(N)&#125;&#125;,25);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>直接copy到一个空的html文件，保存运行即可</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>有趣</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GitHub上README.md排版</title>
+    <url>/2018/01/12/README/</url>
+    <content><![CDATA[<p>刚搭好个人博客，发现文章排版是个大问题，生成文章文件为.md文件，md是markdown的缩写，markdown是一种编辑博客的语言。用惯了可视化的博客编辑器（比如CSDN博客，囧），这种编程式的博客编辑方案着实让人眼前一亮。不过GitHub支持的语法在标准markdown语法的基础上做了修改，称为Github Flavored Markdown，简称GFM。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed989dbe9d88c57e9381.jpg></p>
+<a id="more"></a>
+关于标题
+---
+        大标题  
+        ====  
+在文本下面加上 等于号，那么上方的文本就变成了大标题。等于号的个数无限制，但一定要大于0个哦。。
+比大标题低一级的是中标题，也就是显示出来比大标题小点。
+
+<pre><code>中标题  
+------- </code></pre><p>在文本下面加上 下划线 - ，那么上方的文本就变成了中标题，同样的 下划线个数无限制。<br>除此之外，你也会发现大，中标题下面都有一条横线，没错这就是 = 和 - 的显示结果。<br>如果你只输入了等于号=，但其上方无文字，那么就只会显示一条直线。如果上方有了文字，但你又只想显示一条横线，而不想把上方的文字转义成大标题的话，那么你就要在等于号=和文字直接补一个空行。<br>补空行：是很常用的用法，当你不想上下两个不同的布局方式交错到一起的时候，就要在两种布局之间补一个空行。<br>如果你只输入了短横线（减号）-，其上方无文字，那么要显示直线，必须要写三个减号以上。不过与等于号的显示效果不同，它显示出来时虚线而不是实线。同减号作用相同的还有星号*和下划线_，同样的这两者符号也要写三个以上才能显示一条虚横线。<br>除此以外，关于标题还有等级表示法，分为六个等级，显示的文本大小依次减小。不同等级之间是以井号  #  的个数来标识的。一级标题有一个 #，二级标题有两个# ，以此类推。</p>
+<pre><code>#一级标题  
+##二级标题  
+###三级标题  
+####四级标题  
+#####五级标题  
+######六级标题 </code></pre><p>注意井号#和标题名称要并排写作一行，显示效果如图：</p>
+<p><img src=https://pic.downk.cc/item/5e78ed029dbe9d88c57e3137.png ></p>
+实际上，前文所述的大标题和中标题是分别和一级标题和二级标题对应的。即大标题大小和一级标题相同，中标题大小和二级标题相同。
+
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>网上有很多README插入图片的教程了，经我自己多次测试呢，发现可以使用的最简单，最基本的语法是：</p>
+<pre><code class="&lt;p&gt;&lt;img"></code></pre>
+<pre><code>两个p标签直接加图片地址  后边控制大小，学过html和css的朋友都会</code></pre><h2 id="插入代码片段"><a href="#插入代码片段" class="headerlink" title="插入代码片段"></a>插入代码片段</h2><pre><code>我们需要在代码的上一行和下一行用` `` 标记。``` 不是三个单引号，而是数字1左边，Tab键上面的键。要实现语法高亮那么只要在 ``` 之后加上你的编程语言即可（忽略大小写）。c++语言可以写成c++也可以是cpp。看代码：</code></pre><p><img src=https://pic.downk.cc/item/5e78ed029dbe9d88c57e312c.png ></p>
+
+
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+GitHub 博客搭建</title>
+    <url>/2018/01/12/hexo/</url>
+    <content><![CDATA[<p>在几乎还是对GitHub一无所知的情况下用Hexo搭建博客，找过很多的教程，但是都在中途因为不知何起的报错而结束，或是步骤，或是教程不匹配。网上存在的教程要么复杂不适合入门，要么就是过于啰嗦。东拼西凑，于是写了这篇精简步骤。</p>
+<p><img src=https://pic.downk.cc/item/5e78ed569dbe9d88c57e66ec.gif ></p>
+<a id="more"></a>
+<br>
+<br>
+基本步骤
+-----------------------------------------------------------------------
+
+<p>注册GitHub并创建仓库。<br>安装部署环境。<br>Hexo以及npm的安装与配置。<br>Hexo与GitHub仓库的连接。<br>页面部署以及文章发布。<br>主题更改。</p>
+<h2 id="注册GitHub并创建仓库"><a href="#注册GitHub并创建仓库" class="headerlink" title="注册GitHub并创建仓库"></a>注册GitHub并创建仓库</h2><p>打开<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 点击sign up注册自己的GitHub账号，依次输入用户名、邮箱、密码，并且牢记这三项信息。Step2与Step3可按照自身实际情况输入，点击Creat来创建。<br>当创建完毕后会提醒新建一个工程，但此时邮箱未验证，不能创建工程，点击“Start a project”根据步骤验证邮箱。<br>新建一个Repository（仓库），切记Repository name应按照 XXXX.github.io的形式,其他选项保持默认，至此，拥有一个空仓库的github账号就创建完成了。</p>
+<h2 id="安装部署环境"><a href="#安装部署环境" class="headerlink" title="安装部署环境"></a>安装部署环境</h2><p>官网下载安装node和Git<br>环境安装中所有选项均为默认选项，无需更改。<br>安装完成后鼠标右键单击任意位置应会出现 Git GUI Here和 Git Bash Here</p>
+<h2 id="Hexo以及npm的安装与配置"><a href="#Hexo以及npm的安装与配置" class="headerlink" title="Hexo以及npm的安装与配置"></a>Hexo以及npm的安装与配置</h2><p>在喜欢的目录下创建BLOG文件夹，进入文件夹右键单击空白处，选择Git Bash Here打开Git控制台<br>在控制台中输入（Git粘贴快捷键 Shift+Insert）：</p>
+<pre><code>npm install hexo-cli -g</code></pre><p>等待install完毕后继续输入：</p>
+<pre><code>npm install hexo -save</code></pre><p>这个命令执行时间较长，耐心等待绿色用户名出来以后再进行下一步操作<br>下一步输入：</p>
+<pre><code>hexo -v</code></pre><p>如果出现相应版本信息，说明hexo部署成功。</p>
+<p>接下来对Hexo进行操作<br>1.初始化Hexo，命令结束后，你所在的BLOG文件夹会有相关配置文件生成。</p>
+<pre><code>hexo init</code></pre><p>2.安装npm组件</p>
+<pre><code>npm install</code></pre><p>3.开始部署本地静态页面</p>
+<pre><code>hexo g</code></pre><p>4.本地服务器预览</p>
+<pre><code>hexo s</code></pre><p>会出现INFO Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>. Press Ctrl+C to stop.<br>然后在浏览器中输入localhost:4000就能预览到默认的Hexo主题。</p>
+<h2 id="Hexo与GitHub仓库的连接"><a href="#Hexo与GitHub仓库的连接" class="headerlink" title="Hexo与GitHub仓库的连接"></a>Hexo与GitHub仓库的连接</h2><pre><code>本地与GitHub仓库的连接是重点也是最容易出错的点，所以在这个部分务必按照步骤来。</code></pre><p>1.打开选好的BLOG文件夹，其根目录下有_config.yml配置文件，此为博客配置文件。用文本编辑器打开将最后改为：</p>
+<pre><code>    deploy: 
+        type: git
+        repository: https://github.com/username/username.github.io.git
+        branch: master
+
+倒数第二行的repository是自己仓库地址，切记要在仓库地址后添加.git</code></pre><p>2.在控制台设置自己的用户名和邮箱</p>
+<pre><code>git config --global user.name &quot;username&quot;
+git config --global user.email &quot;example@mail.com&quot;</code></pre><p>3.生成密钥</p>
+<pre><code>ssh-keygen -t rsa -C &quot;example@mail.com&quot;
+
+这一步需要连续输按3次回车以设置空密码</code></pre><p>4.将密钥粘贴到GitHub<br>①：密钥默认的生成路径为 C:\Users\用户名.ssh 文件夹，将此文件夹下id_rsa.pub以文本文档形式打开并复制。<br>②：登陆GitHub，个人中心点Setting，左侧SSH and GPG keys，然后右侧新建一个SSH key，将刚才复制的密钥粘贴到Key框，点击Add SSH key以保存。<br>5.将仓库类型改为博客式<br>打开自己的仓库，点击仓库中的setting,下滑Choose a theme 随便select一个主题布局，并保存。<br>6.测试本机与GitHub的连接<br>Git控制台输入</p>
+<pre><code>ssh -T git@github.com</code></pre><p>如果显示:</p>
+<pre><code>Hi XXXX! You’ve successfully authenticated, but GitHub does not provide shell access.</code></pre><p>说明配置连接正常<br>接下来安装npm的发布拓展（Git控制台）：</p>
+<pre><code>npm install hexo-deployer-git --save</code></pre><p>耐心等跑完，部署阶段就到此完成。</p>
+<h2 id="页面部署以及文章发布"><a href="#页面部署以及文章发布" class="headerlink" title="页面部署以及文章发布"></a>页面部署以及文章发布</h2><p>接着输入<br>1.部署本地静态页面</p>
+<pre><code>hexo g</code></pre><p>2.本地服务器预览页面</p>
+<pre><code>hexo s</code></pre><p>3.确认无误后发布页面</p>
+<pre><code>hexo d</code></pre><p>至此，解释一下Git控制台的常用命令含义</p>
+<pre><code>hexo n &quot;title&quot;        // n=new 新建一篇文章
+hexo g                // g=generate 本地部署生成
+hexo s                // s=server 可以在localhost预览
+hexo d                // d=deploy 发布至GitHub
+hexo -v               // v=version 显示hexo版本信息</code></pre><p>最后 遇到报错或警告直接复制信息百度搜索解决问题（Git复制快捷键 Ctrl+Insert）</p>
+<hr>
+<p>转载请注明出处<a href="https://berome.github.io/">@Berome</a></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>丁博同學</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://berome.github.io/"/>
+  <updated>2020-03-23T17:24:18.705Z</updated>
+  <id>http://berome.github.io/</id>
+  
+  <author>
+    <name>Berome</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>moodle平台安装及环境配置</title>
+    <link href="http://berome.github.io/2019/04/13/moodle/"/>
+    <id>http://berome.github.io/2019/04/13/moodle/</id>
+    <published>2019-04-13T09:25:45.000Z</published>
+    <updated>2020-03-23T17:24:18.705Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Moodle是一个开源课程管理系统（CMS），也被称为学习管理系统（LMS）或虚拟学习环境（VLE），它通常用来播放符合SCORM标准的课件，但功能远不止课程管理，作业模块等功能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed6c9dbe9d88c57e75cc.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 8.0.15安装(windows 64位)</title>
+    <link href="http://berome.github.io/2019/04/13/mysql/"/>
+    <id>http://berome.github.io/2019/04/13/mysql/</id>
+    <published>2019-04-13T08:26:03.000Z</published>
+    <updated>2020-03-23T17:20:56.660Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed899dbe9d88c57e890d.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows下安装Apache</title>
+    <link href="http://berome.github.io/2019/04/13/apache/"/>
+    <id>http://berome.github.io/2019/04/13/apache/</id>
+    <published>2019-04-13T07:43:17.000Z</published>
+    <updated>2020-03-23T17:37:05.012Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Apache是经典的Web服务器之一  &lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ecca9dbe9d88c57e0e79.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云</title>
+    <link href="http://berome.github.io/2018/10/17/world/"/>
+    <id>http://berome.github.io/2018/10/17/world/</id>
+    <published>2018-10-17T14:19:39.000Z</published>
+    <updated>2020-03-23T17:03:28.913Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;域名不够用？不存在&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo网站访问量统计</title>
+    <link href="http://berome.github.io/2018/10/04/visitor/"/>
+    <id>http://berome.github.io/2018/10/04/visitor/</id>
+    <published>2018-10-04T00:28:39.000Z</published>
+    <updated>2020-03-23T17:38:42.235Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里使用的是不蒜子提供的阅读统计功能，使用的hexo主题是yilia&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78edb09dbe9d88c57ea0d6.jpg&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>海报设计总览</title>
+    <link href="http://berome.github.io/2018/10/04/design/"/>
+    <id>http://berome.github.io/2018/10/04/design/</id>
+    <published>2018-10-03T16:52:03.000Z</published>
+    <updated>2020-03-23T17:33:55.948Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整理一部分做过的海报&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed0f9dbe9d88c57e38b1.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="设计" scheme="http://Berome.github.io/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Serv-U架设FTP服务器精简教程</title>
+    <link href="http://berome.github.io/2018/09/16/ftp/"/>
+    <id>http://berome.github.io/2018/09/16/ftp/</id>
+    <published>2018-09-16T13:01:26.000Z</published>
+    <updated>2020-03-23T17:30:51.726Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed2b9dbe9d88c57e4a10.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>KEIL C支持数据类型</title>
+    <link href="http://berome.github.io/2018/05/03/keil/"/>
+    <id>http://berome.github.io/2018/05/03/keil/</id>
+    <published>2018-05-03T10:18:28.000Z</published>
+    <updated>2020-03-23T17:25:02.086Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;编写C语言时必须弄清每种数据类型能表示的数据范围及其占用的字节数，在满足要求的情况下应尽使用占用字节数少的数据类型，因为MCS-51单片机的存储资源是十分宝贵的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed5d9dbe9d88c57e6b5e.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="笔记" scheme="http://Berome.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决Javac 编译时报&quot;编码GBK的不可映射字符</title>
+    <link href="http://berome.github.io/2018/04/08/utf/"/>
+    <id>http://berome.github.io/2018/04/08/utf/</id>
+    <published>2018-04-08T14:02:24.000Z</published>
+    <updated>2020-03-23T17:39:23.140Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在java代码中出现汉字时，编译会报错&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78eda99dbe9d88c57e9bea.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>KMS注册机激活office/windows简易教程</title>
+    <link href="http://berome.github.io/2018/04/02/kms/"/>
+    <id>http://berome.github.io/2018/04/02/kms/</id>
+    <published>2018-04-01T16:55:31.000Z</published>
+    <updated>2020-03-23T17:22:30.755Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed5d9dbe9d88c57e6baa.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简述C语言的函数指针</title>
+    <link href="http://berome.github.io/2018/03/20/hanshu/"/>
+    <id>http://berome.github.io/2018/03/20/hanshu/</id>
+    <published>2018-03-20T13:07:10.000Z</published>
+    <updated>2020-03-23T17:28:00.349Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在C语言中，函数的参数不仅可以是整数、小数、字符等具体的数据，还可以是指向它们的指针。用指针变量作函数参数可以将函数外部的地址传递到函数内部，使得在函数内部可以操作函数外部的数据，并且这些数据不会随着函数的结束而被销毁。&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed569dbe9d88c57e66fa.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="笔记" scheme="http://Berome.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简述C语言动态数组的构成</title>
+    <link href="http://berome.github.io/2018/03/11/dynamic-array/"/>
+    <id>http://berome.github.io/2018/03/11/dynamic-array/</id>
+    <published>2018-03-11T06:21:40.000Z</published>
+    <updated>2020-03-23T17:32:37.690Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ecf79dbe9d88c57e2a7f.jpg &gt;&lt;/p&gt;
+数组的优点在于随机存取，然而其的缺点也是十分明显的 ，就是一旦建立其大小就不能够改变。
+    
+    </summary>
+    
+    
+    
+      <category term="笔记" scheme="http://Berome.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text 3中配置编译和运行Java</title>
+    <link href="http://berome.github.io/2018/03/02/java/"/>
+    <id>http://berome.github.io/2018/03/02/java/</id>
+    <published>2018-03-02T06:22:24.000Z</published>
+    <updated>2020-03-23T17:26:15.855Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近开始学习面向对象Java程序设计，在一如既往使用sublime写代码的时候，发现运行不了，只能编译，而老师介绍的是使用命令符编译运行，太多麻烦，效率较低。于是通过网上整理得出此简易教程。&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed569dbe9d88c57e66f4.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电脑磁盘分区简易教程</title>
+    <link href="http://berome.github.io/2018/01/23/fenqu/"/>
+    <id>http://berome.github.io/2018/01/23/fenqu/</id>
+    <published>2018-01-23T12:32:42.000Z</published>
+    <updated>2020-03-23T17:32:10.530Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;win10如何分区&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed029dbe9d88c57e3142.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ppt设计</title>
+    <link href="http://berome.github.io/2018/01/12/ppt/"/>
+    <id>http://berome.github.io/2018/01/12/ppt/</id>
+    <published>2018-01-12T14:19:05.000Z</published>
+    <updated>2020-03-23T17:18:48.941Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed989dbe9d88c57e9387.jpg &gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;0-写在前面&quot;&gt;&lt;a href=&quot;#0-写在前面&quot; class=&quot;headerlink&quot; title=&quot;0.写在前面&quot;&gt;&lt;/a&gt;0.写在前面&lt;/h2&gt;&lt;p&gt;我对PPT的定位是演讲的辅助工具，如果你认为你需要做一个华丽丽的动画，那就移步吧，hiahia~在演讲的时候，你要传达的信息通过三个途径实现——你的肢体、你的语言、你的PPT，尽量不要越俎代庖，喧宾夺主的事儿更不能干了。所以你就应该可以明白为什么大家都不提倡在PPT中放大量文字了——如果PPT把你要讲的东西都显示出来了，还要你干什么？&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="设计" scheme="http://Berome.github.io/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim的常用命令使用</title>
+    <link href="http://berome.github.io/2018/01/12/vim/"/>
+    <id>http://berome.github.io/2018/01/12/vim/</id>
+    <published>2018-01-12T07:21:47.000Z</published>
+    <updated>2020-03-23T17:37:33.855Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前去校acm俱乐部水了一段时间，发现他们习惯使用vim做编译器，在算法比赛中每一分每一秒都尤为重要，正好vim的各种快捷命令可以节省大量的时间&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78edb09dbe9d88c57ea0cb.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="笔记" scheme="http://Berome.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正方教务管理系统一键评教脚本</title>
+    <link href="http://berome.github.io/2018/01/12/teaching/"/>
+    <id>http://berome.github.io/2018/01/12/teaching/</id>
+    <published>2018-01-11T19:15:46.000Z</published>
+    <updated>2020-03-23T17:13:39.381Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;每学期都会有一次教务评价，有好多个不同的老师，每个老师又细分不同的打分项，打分项又分为1、&lt;br&gt;2、3、4、5，麻烦的要死，为了偷懒，便做了这个脚本，主要用javascipt&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78eda99dbe9d88c57e9bda.jpg &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用hexo搭建github.io博客-更换主题</title>
+    <link href="http://berome.github.io/2018/01/12/hexotheme/"/>
+    <id>http://berome.github.io/2018/01/12/hexotheme/</id>
+    <published>2018-01-11T18:59:33.000Z</published>
+    <updated>2020-03-23T17:26:37.447Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在搭建配置github教程完成后,我们知道了要怎么来发布博客文章,但是,这个博客丑了点,这篇就来说说怎么更换主题让博客变得高大上&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78eda99dbe9d88c57e9be0.png &gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html + javascript制作心形表白动画</title>
+    <link href="http://berome.github.io/2018/01/12/heart/"/>
+    <id>http://berome.github.io/2018/01/12/heart/</id>
+    <published>2018-01-11T18:07:20.000Z</published>
+    <updated>2020-03-23T17:27:47.792Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed569dbe9d88c57e66e5.png &gt;&lt;/p&gt;
+   由于无聊，于是有了这个
+代码如下：
+    
+    </summary>
+    
+    
+    
+      <category term="有趣" scheme="http://Berome.github.io/tags/%E6%9C%89%E8%B6%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub上README.md排版</title>
+    <link href="http://berome.github.io/2018/01/12/README/"/>
+    <id>http://berome.github.io/2018/01/12/README/</id>
+    <published>2018-01-11T17:48:12.000Z</published>
+    <updated>2020-03-23T17:16:49.811Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;刚搭好个人博客，发现文章排版是个大问题，生成文章文件为.md文件，md是markdown的缩写，markdown是一种编辑博客的语言。用惯了可视化的博客编辑器（比如CSDN博客，囧），这种编程式的博客编辑方案着实让人眼前一亮。不过GitHub支持的语法在标准markdown语法的基础上做了修改，称为Github Flavored Markdown，简称GFM。&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://pic.downk.cc/item/5e78ed989dbe9d88c57e9381.jpg&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://Berome.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+</feed>
